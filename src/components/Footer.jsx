@@ -1,5 +1,6 @@
 import React from 'react';
-import { Rocket, ShieldCheck, Heart } from 'lucide-react';
+import { Rocket, ShieldCheck, Instagram } from 'lucide-react';
+import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../data/servicesData';
 
 export default function Footer() {
   return (
@@ -24,11 +25,23 @@ export default function Footer() {
               <strong style={{ fontSize: '1.2rem', fontWeight: 800 }}>GrowthHikes</strong>
             </div>
             <p style={{ lineHeight: 1.6, marginBottom: '16px' }}>
-              Full-service digital growth agency & custom software studio. Elevating brands with 4K drone cinematography, viral Meta reels, and autonomous AI agents.
+              Full-service digital growth agency & custom software studio. Elevating brands with 4K drone cinematography, viral Meta reels, paid advertising, and autonomous AI agents.
             </p>
-            <div className="badge" style={{ fontSize: '0.75rem' }}>
-              <ShieldCheck size={14} color="#4ade80" />
-              <span>rttss-sahil ecosystem</span>
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="badge"
+                style={{ background: 'rgba(244, 63, 94, 0.1)', color: '#fb7185', borderColor: 'rgba(244, 63, 94, 0.3)' }}
+              >
+                <Instagram size={14} />
+                <span>{INSTAGRAM_HANDLE}</span>
+              </a>
+              <div className="badge" style={{ fontSize: '0.75rem' }}>
+                <ShieldCheck size={14} color="#4ade80" />
+                <span>rttss-sahil fleet</span>
+              </div>
             </div>
           </div>
 
@@ -41,8 +54,9 @@ export default function Footer() {
               <li><a href="#drone">Drone Cinematography & FPV</a></li>
               <li><a href="#services">Local Marketing & GMB SEO</a></li>
               <li><a href="#services">Instagram & Meta Management</a></li>
-              <li><a href="#services">Paid Meta Ad Funnels (CAPI)</a></li>
-              <li><a href="#services">Viral 9:16 Video Production</a></li>
+              <li><a href="#services">Paid Advertising (Google/Meta/YT)</a></li>
+              <li><a href="#services">User Generated Content (UGC)</a></li>
+              <li><a href="#services">Email Marketing Automation</a></li>
             </ul>
           </div>
 
@@ -57,6 +71,7 @@ export default function Footer() {
               <li><a href="#services">WhatsApp Cloud API Bots</a></li>
               <li><a href="#ai-agents">Autonomous AI Support Agents</a></li>
               <li><a href="#ai-agents">Autonomous AI Calling Agents</a></li>
+              <li><a href="#services">Ecommerce Mentorship & Coaching</a></li>
             </ul>
           </div>
 
@@ -84,7 +99,7 @@ export default function Footer() {
           gap: '12px',
         }}>
           <div>
-            © {new Date().getFullYear()} GrowthHikesOrg. All rights reserved.
+            © {new Date().getFullYear()} GrowthHikesOrg. Follow us on Instagram: <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#fb7185', fontWeight: 600 }}>{INSTAGRAM_HANDLE}</a>
           </div>
           <div>
             Engineered with modern standards within <code style={{ color: '#06b6d4' }}>rttss-sahil</code>.

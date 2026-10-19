@@ -11,6 +11,9 @@ import {
   Headphones,
   PhoneCall,
   Zap,
+  Target,
+  Mail,
+  Sparkles,
   CheckCircle2,
   ArrowUpRight,
 } from 'lucide-react';
@@ -26,9 +29,23 @@ const ICON_MAP = {
   Headphones,
   PhoneCall,
   Zap,
+  Target,
+  Mail,
+  Sparkles,
 };
 
-const CATEGORIES = ['All Verticals', 'Creative Media', 'Social Media', 'Local Dominance', 'AI Voice Tech', 'AI Automation', 'Engineering'];
+const CATEGORIES = [
+  'All Verticals',
+  'Creative Media',
+  'Social Media',
+  'Paid Growth',
+  'Retention',
+  'Local Dominance',
+  'Consulting',
+  'AI Voice Tech',
+  'AI Automation',
+  'Engineering',
+];
 
 export default function ServicesGrid({ onSelectService }) {
   const [activeCategory, setActiveCategory] = useState('All Verticals');

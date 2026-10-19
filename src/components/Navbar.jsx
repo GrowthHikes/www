@@ -1,5 +1,6 @@
 import React from 'react';
-import { Rocket, Sparkles, PhoneCall } from 'lucide-react';
+import { Rocket, Sparkles, PhoneCall, Instagram } from 'lucide-react';
+import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../data/servicesData';
 
 export default function Navbar({ onOpenBooking, onOpenCalculator }) {
   return (
@@ -44,11 +45,26 @@ export default function Navbar({ onOpenBooking, onOpenCalculator }) {
         </div>
 
         {/* Center Links */}
-        <div style={{ display: 'flex', gap: '28px', alignItems: 'center', fontSize: '0.9rem', fontWeight: 500 }} className="desktop-links">
+        <div style={{ display: 'flex', gap: '24px', alignItems: 'center', fontSize: '0.9rem', fontWeight: 500 }} className="desktop-links">
           <a href="#services" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }}>Services</a>
           <a href="#drone" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }}>Drone Cine</a>
           <a href="#ai-agents" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }}>AI & Voice</a>
           <a href="#calculator" onClick={(e) => { e.preventDefault(); onOpenCalculator(); }} style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }}>Pricing Calculator</a>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: '#f43f5e',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontWeight: 600,
+            }}
+          >
+            <Instagram size={15} />
+            <span>{INSTAGRAM_HANDLE}</span>
+          </a>
         </div>
 
         {/* Action Buttons */}

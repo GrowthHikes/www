@@ -1,3 +1,6 @@
+export const INSTAGRAM_URL = 'https://www.instagram.com/growth_hikes';
+export const INSTAGRAM_HANDLE = '@growth_hikes';
+
 export const SERVICES = [
   {
     id: 'drone-shooting',
@@ -41,7 +44,7 @@ export const SERVICES = [
     category: 'Social Media',
     icon: 'Instagram',
     tagline: 'End-to-end viral reels production, daily management, and high-ROI ad funnels',
-    highlight: '15-30 Reels Monthly',
+    highlight: 'Official @growth_hikes',
     description: 'Full-service management of your Instagram, Facebook, and Meta ad funnels. We script, produce, edit, and publish high-retention content while managing community comments & DMs.',
     features: [
       'Content ideation, scripting & hook engineering',
@@ -52,6 +55,77 @@ export const SERVICES = [
     priceFrom: '$600/mo',
     priceINR: '₹25,000/mo',
     type: 'Monthly Retainer',
+  },
+  {
+    id: 'paid-advertising',
+    title: 'Paid Advertising (Meta, Google & YouTube)',
+    category: 'Paid Growth',
+    icon: 'Target',
+    tagline: 'High-converting multi-channel ad campaigns maximizing ROAS and pipeline revenue',
+    highlight: 'Performance-First ROAS',
+    description: 'Execute data-driven paid advertising across Meta Ads, Google Search, Performance Max, and YouTube in-stream video ads with server-side CAPI tracking.',
+    features: [
+      'Instagram & Facebook Reels, Carousel & Lead Form ads',
+      'Google Search & High-intent Performance Max funnels',
+      'YouTube video ads reaching ready-to-buy consumers',
+      'Custom audience segmentation & retargeting pools',
+    ],
+    priceFrom: '$500/mo',
+    priceINR: '₹22,000/mo',
+    type: 'Monthly + Ad Spend %',
+  },
+  {
+    id: 'email-marketing',
+    title: 'Email Marketing & Retention',
+    category: 'Retention',
+    icon: 'Mail',
+    tagline: 'High-converting automated email flows, cold outreach, and revenue newsletters',
+    highlight: '40%+ Open Rates',
+    description: 'Turn your subscriber list into consistent recurring revenue with automated Klaviyo/Mailchimp lifecycle flows, weekly newsletters, and personalized B2B cold outbound campaigns.',
+    features: [
+      'Welcome, Abandoned Cart, and Post-Purchase automation',
+      'Technical deliverability setup (SPF, DKIM, DMARC)',
+      'B2B cold email sequences with high-response copy',
+      'Mobile-optimized high-converting template design',
+    ],
+    priceFrom: '$350',
+    priceINR: '₹15,000',
+    type: 'Setup + Retainer',
+  },
+  {
+    id: 'user-generated-content',
+    title: 'User Generated Content (UGC)',
+    category: 'Creative Media',
+    icon: 'Sparkles',
+    tagline: 'Authentic creator video reviews and viral TikTok/Reels product showcases',
+    highlight: 'Vetted Creator Network',
+    description: 'Source authentic, high-converting video reviews from our vetted creator network. We handle concept scripting, creator direction, editing, and paid ad whitelisting.',
+    features: [
+      '100+ vetted native UGC video creators',
+      'Hook-tested problem/solution video scripts',
+      'Edited ad-ready 9:16 vertical cuts + raw assets',
+      'Full commercial usage rights & ad whitelisting',
+    ],
+    priceFrom: '$450',
+    priceINR: '₹20,000',
+    type: 'Per Video Batch',
+  },
+  {
+    id: 'ecommerce-coaching',
+    title: 'Ecommerce Coaching & Mentorship',
+    category: 'Consulting',
+    tagline: '1-on-1 strategic scaling for Shopify, Amazon, and D2C brands',
+    highlight: '7-Figure Playbooks',
+    description: 'Scale your store profitably with direct mentorship. We audit your unit economics, supply chain, conversion rates, and paid ad funnels to build a sustainable 7-figure brand.',
+    features: [
+      'Comprehensive Shopify CRO & conversion funnel audit',
+      'Unit economics, gross margin, and LTV/CAC modeling',
+      'Omnichannel acquisition roadmap (Meta, Search, Influencers)',
+      'Bi-weekly 1-on-1 executive strategy & review calls',
+    ],
+    priceFrom: '$750/mo',
+    priceINR: '₹32,000/mo',
+    type: 'Monthly Mentorship',
   },
   {
     id: 'chatbots',
