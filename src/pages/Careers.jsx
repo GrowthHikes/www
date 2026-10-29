@@ -71,6 +71,16 @@ export default function Careers() {
 
   const handleApply = (e) => {
     e.preventDefault();
+    try {
+      const existing = JSON.parse(localStorage.getItem('growthhikes_applications') || '[]');
+      existing.unshift({
+        roleId: selectedRole?.id,
+        roleTitle: selectedRole?.title,
+        ...formData,
+        submittedAt: new Date().toISOString()
+      });
+      localStorage.setItem('growthhikes_applications', JSON.stringify(existing));
+    } catch {}
     setSubmitted(true);
   };
 

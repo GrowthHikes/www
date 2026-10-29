@@ -39,11 +39,36 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate submission or connect to webhook
+    try {
+      const existing = JSON.parse(localStorage.getItem('growthhikes_leads') || '[]');
+      existing.unshift({
+        ...formData,
+        timestamp: new Date().toISOString(),
+        qualification: { score: 85, tier: 'Direct Contact Form' }
+      });
+      localStorage.setItem('growthhikes_leads', JSON.stringify(existing));
+    } catch {}
+
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }, 800);
+    }, 400);
+  };
+
+  const getWhatsAppMessageUrl = () => {
+    const rawNumber = CONTACT_PHONE_IN.replace(/\D/g, '');
+    const text = encodeURIComponent(
+      `Hello GrowthHikes Team! 🚀\n\n` +
+      `I've requested a project proposal:\n` +
+      `• Name: ${formData.name}\n` +
+      `• Company: ${formData.company || 'N/A'}\n` +
+      `• Phone: ${formData.phone}\n` +
+      `• Email: ${formData.email}\n` +
+      `• Budget: ${formData.budget}\n` +
+      (formData.services.length ? `• Services: ${formData.services.join(', ')}\n` : '') +
+      (formData.message ? `• Summary: ${formData.message}\n` : '')
+    );
+    return `https://wa.me/${rawNumber}?text=${text}`;
   };
 
   return (
@@ -260,6 +285,29 @@ export default function Contact() {
                   <p style={{ color: '#94a3b8', fontSize: '1rem', lineHeight: 1.6, marginBottom: '24px' }}>
                     Thank you, <strong>{formData.name}</strong>. A GrowthHikes technical director will review your project scope and contact you at <strong>{formData.phone || formData.email}</strong> shortly.
                   </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '16px' }}>
+                    <a
+                      href={getWhatsAppMessageUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        padding: '14px 24px',
+                        borderRadius: '12px',
+                        background: '#25D366',
+                        color: '#ffffff',
+                        fontWeight: 700,
+                        fontSize: '0.95rem',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <MessageSquare size={18} />
+                      <span>Continue on WhatsApp (+91 97080 01001)</span>
+                    </a>
+                  </div>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="btn-secondary"

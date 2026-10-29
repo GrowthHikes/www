@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { SERVICES } from '../data/servicesData';
+import { Link } from 'react-router-dom';
+import { SERVICES, SERVICES_CATEGORIES } from '../data/servicesData';
 import {
   Camera,
   MapPin,
@@ -16,6 +17,7 @@ import {
   Sparkles,
   CheckCircle2,
   ArrowUpRight,
+  ArrowRight
 } from 'lucide-react';
 
 const ICON_MAP = {
@@ -34,66 +36,60 @@ const ICON_MAP = {
   Sparkles,
 };
 
-const CATEGORIES = [
-  'All Verticals',
-  'Creative Media',
-  'Social Media',
-  'Paid Growth',
-  'Retention',
-  'Local Dominance',
-  'Consulting',
-  'AI Voice Tech',
-  'AI Automation',
-  'Engineering',
-];
-
 export default function ServicesGrid({ onSelectService }) {
-  const [activeCategory, setActiveCategory] = useState('All Verticals');
+  const [activeCategory, setActiveCategory] = useState('all');
 
-  const filteredServices = activeCategory === 'All Verticals'
+  const filteredServices = activeCategory === 'all'
     ? SERVICES
-    : SERVICES.filter(s => s.category.toLowerCase() === activeCategory.toLowerCase());
+    : SERVICES.filter(s => s.category === activeCategory);
 
   return (
-    <section id="services" style={{ padding: '80px 0' }}>
+    <section id="services" style={{ padding: '90px 0', background: 'rgba(10, 11, 16, 0.4)' }}>
       <div className="container">
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <div className="badge" style={{ marginBottom: '12px' }}>Complete Service Portfolio</div>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '16px' }}>
+          <div className="badge" style={{ marginBottom: '12px' }}>
+            <Sparkles size={13} />
+            <span>Complete Service Portfolio</span>
+          </div>
+          <h2 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)', fontWeight: 800, marginBottom: '16px', fontFamily: 'var(--font-display)' }}>
             Everything Modern Brands Need to <span className="gradient-text">Scale & Automate</span>
           </h2>
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '640px', margin: '0 auto' }}>
-            From drone reels that capture attention to automated software and voice bots that convert traffic into closed revenue.
+          <p style={{ color: 'var(--text-secondary)', maxWidth: '680px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
+            From 4K drone reels that command attention to Next.js platforms, WhatsApp bots, and autonomous AI voice agents that convert traffic into closed revenue.
           </p>
         </div>
 
-        {/* Category Pills */}
+        {/* Category Filter Tabs */}
         <div style={{
           display: 'flex',
           gap: '10px',
           justifyContent: 'center',
           flexWrap: 'wrap',
-          marginBottom: '40px',
+          marginBottom: '44px',
         }}>
-          {CATEGORIES.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              style={{
-                padding: '8px 18px',
-                borderRadius: '9999px',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                background: activeCategory === cat ? 'var(--accent-primary)' : 'rgba(255, 255, 255, 0.05)',
-                color: activeCategory === cat ? '#ffffff' : 'var(--text-secondary)',
-                border: activeCategory === cat ? '1px solid var(--accent-primary)' : '1px solid var(--border-color)',
-                transition: 'all 0.2s',
-              }}
-            >
-              {cat}
-            </button>
-          ))}
+          {SERVICES_CATEGORIES.map(cat => {
+            const isActive = activeCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                style={{
+                  padding: '10px 22px',
+                  borderRadius: '9999px',
+                  fontSize: '0.88rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  background: isActive ? 'rgba(0, 200, 150, 0.15)' : 'rgba(255, 255, 255, 0.04)',
+                  color: isActive ? '#00c896' : '#94a3b8',
+                  border: isActive ? '1px solid #00c896' : '1px solid rgba(255, 255, 255, 0.08)',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                {cat.name}
+              </button>
+            );
+          })}
         </div>
 
         {/* Services Grid */}
@@ -106,10 +102,11 @@ export default function ServicesGrid({ onSelectService }) {
                 key={service.id}
                 className="glass-card"
                 style={{
-                  padding: '30px',
+                  padding: '32px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
+                  borderRadius: '20px',
                 }}
               >
                 <div>
@@ -118,74 +115,105 @@ export default function ServicesGrid({ onSelectService }) {
                     <div style={{
                       width: '48px',
                       height: '48px',
-                      borderRadius: '12px',
-                      background: 'rgba(99, 102, 241, 0.12)',
-                      border: '1px solid rgba(99, 102, 241, 0.3)',
+                      borderRadius: '14px',
+                      background: 'rgba(0, 200, 150, 0.12)',
+                      border: '1px solid rgba(0, 200, 150, 0.25)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#818cf8',
+                      color: '#00c896',
                     }}>
                       <IconComponent size={24} />
                     </div>
                     <span style={{
                       fontSize: '0.75rem',
-                      fontWeight: 600,
-                      padding: '4px 10px',
+                      fontWeight: 700,
+                      padding: '4px 12px',
                       borderRadius: '9999px',
-                      background: 'rgba(6, 182, 212, 0.1)',
-                      color: '#22d3ee',
-                      border: '1px solid rgba(6, 182, 212, 0.25)',
+                      background: 'rgba(255, 255, 255, 0.05)',
+                      color: '#00c896',
+                      border: '1px solid rgba(0, 200, 150, 0.2)',
                     }}>
-                      {service.highlight}
+                      {service.categoryLabel || service.category.toUpperCase()}
                     </span>
                   </div>
 
                   {/* Title & Tagline */}
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '8px' }}>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#fff', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
                     {service.title}
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: '#a5b4fc', marginBottom: '16px', fontWeight: 500 }}>
+                  <p style={{ fontSize: '0.9rem', color: '#a5b4fc', marginBottom: '14px', fontWeight: 500, lineHeight: 1.5 }}>
                     {service.tagline}
                   </p>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '20px', lineHeight: 1.5 }}>
-                    {service.description}
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '20px', lineHeight: 1.6 }}>
+                    {service.shortDesc || service.description}
                   </p>
 
                   {/* Feature Bullets */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
-                    {service.features.map((feat, i) => (
-                      <div key={i} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', fontSize: '0.84rem', color: 'var(--text-muted)' }}>
-                        <CheckCircle2 size={16} color="#4ade80" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    {(service.deliverables || service.features).slice(0, 3).map((feat, i) => (
+                      <div key={i} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', fontSize: '0.84rem', color: '#cbd5e1' }}>
+                        <CheckCircle2 size={16} color="#00c896" style={{ flexShrink: 0, marginTop: '2px' }} />
                         <span>{feat}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Card Bottom Pricing & Action */}
+                {/* Card Bottom: Pricing & Actions */}
                 <div style={{
-                  borderTop: '1px solid var(--border-color)',
+                  borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                   paddingTop: '18px',
                   display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
+                  flexDirection: 'column',
+                  gap: '14px',
                 }}>
-                  <div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Pricing From</div>
-                    <div style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text-primary)' }}>
-                      {service.priceFrom} <span style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--text-muted)' }}>({service.priceINR})</span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                    <div>
+                      <span style={{ fontSize: '0.72rem', color: '#64748b', display: 'block', textTransform: 'uppercase' }}>Starting from</span>
+                      <strong style={{ fontSize: '1.25rem', fontWeight: 800, color: '#00c896' }}>
+                        {service.startingPrice || service.priceINR || service.priceStarts}
+                      </strong>
                     </div>
+
+                    <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
+                      {service.turnaround || service.timeline}
+                    </span>
                   </div>
 
-                  <button
-                    onClick={() => onSelectService(service)}
-                    className="btn-secondary"
-                    style={{ padding: '8px 14px', fontSize: '0.82rem' }}
-                  >
-                    <span>Inquire</span>
-                    <ArrowUpRight size={14} />
-                  </button>
+                  <div style={{ display: 'flex', gap: '10px' }}>
+                    <Link
+                      to={`/services/${service.slug}`}
+                      style={{
+                        flex: 1,
+                        padding: '10px',
+                        borderRadius: '10px',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
+                        color: '#fff',
+                        fontWeight: 600,
+                        fontSize: '0.85rem',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                      }}
+                    >
+                      <span>Scope Details</span>
+                      <ArrowRight size={13} />
+                    </Link>
+
+                    <button
+                      onClick={() => onSelectService(service)}
+                      className="btn-primary"
+                      style={{ flex: 1, padding: '10px', fontSize: '0.85rem', borderRadius: '10px' }}
+                    >
+                      <span>Book Sprint</span>
+                      <ArrowUpRight size={14} />
+                    </button>
+                  </div>
                 </div>
               </div>
             );

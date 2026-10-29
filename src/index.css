@@ -201,6 +201,10 @@ button {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
 }
 
+.header.mobile-open {
+  border-radius: 24px;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -780,6 +784,69 @@ button {
   margin-top: 24px;
 }
 
+.mm-preview-deliverables ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.mm-preview-deliverables li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.mm-preview-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.mm-action-primary {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00c896 0%, #059669 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.mm-action-primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.mm-action-secondary {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.mm-action-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
 .mm-consult-btn {
   width: 100%;
   padding: 12px;
@@ -879,26 +946,26 @@ button {
 }
 
 .tech-card-item {
-  background: rgba(235, 245, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  padding: 22px 14px;
+  background: rgba(220, 238, 255, 0.07);
+  border: 1px solid rgba(220, 238, 255, 0.12);
+  border-radius: 20px;
+  padding: 24px 14px 18px 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   text-align: center;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .tech-card-item:hover {
-  background: rgba(235, 245, 255, 0.12);
-  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(220, 238, 255, 0.14);
+  border-color: rgba(56, 189, 248, 0.5);
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.22);
 }
 
 .tech-icon-container {

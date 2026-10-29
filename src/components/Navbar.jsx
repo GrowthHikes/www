@@ -53,7 +53,7 @@ export default function Navbar({ onOpenBooking }) {
 
   return (
     <div className="header-wrapper">
-      <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <header className={`header ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         <nav className="navbar">
           {/* Logo */}
           <Link to="/" className="logo" aria-label="GrowthHikes Home">
