@@ -19,10 +19,17 @@ export default function AiAgentsDemo() {
     { speaker: 'AI Agent', text: 'Thank you for contacting GrowthHikes Studio. This is Maya, your autonomous AI assistant. Are you calling regarding a drone shoot or software engineering sprint?' }
   ]);
 
-  const chatEndRef = useRef(null);
+  const chatBodyRef = useRef(null);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
   }, [messages, isTyping]);
 
   useEffect(() => {
@@ -220,15 +227,18 @@ export default function AiAgentsDemo() {
             </div>
 
             {/* Chat Body */}
-            <div style={{
-              height: '340px',
-              overflowY: 'auto',
-              padding: '24px',
-              background: '#0d0f18',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-            }}>
+            <div
+              ref={chatBodyRef}
+              style={{
+                height: '340px',
+                overflowY: 'auto',
+                padding: '24px',
+                background: '#0d0f18',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px',
+              }}
+            >
               {messages.map((msg, idx) => (
                 <div
                   key={idx}
@@ -297,7 +307,6 @@ export default function AiAgentsDemo() {
                   </div>
                 </div>
               )}
-              <div ref={chatEndRef} />
             </div>
 
             {/* Quick Sample Prompts */}

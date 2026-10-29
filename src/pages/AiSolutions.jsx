@@ -7,7 +7,7 @@ import { WHATSAPP_LINK } from '../data/servicesData';
 
 export default function AiSolutions({ onOpenBooking }) {
   return (
-    <div style={{ background: '#050505', color: '#fff', minHeight: '100vh' }}>
+    <div style={{ background: '#050505', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
       {/* 1. Cyber AI Hero Section */}
       <section className="aihero" style={{ minHeight: '85vh', padding: '120px 0 60px 0', position: 'relative', overflow: 'hidden' }}>
         {/* Glow */}
