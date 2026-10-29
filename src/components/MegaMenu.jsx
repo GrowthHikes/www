@@ -49,7 +49,7 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking }) {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(3, 4, 7, 0.96)',
+        backgroundColor: '#030407',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
         zIndex: 99999,

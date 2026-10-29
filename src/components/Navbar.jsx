@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Phone, Globe, Menu, X, Sparkles } from 'lucide-react';
 import MegaMenu from './MegaMenu';
+import Logo from './Logo';
 
 const PHONE_NUMBERS = [
   { code: 'IN', label: 'India', display: '+91 97080 01001', href: 'tel:+919708001001' },
@@ -56,11 +57,8 @@ export default function Navbar({ onOpenBooking }) {
       <header className={`header ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         <nav className="navbar">
           {/* Logo */}
-          <Link to="/" className="logo" aria-label="GrowthHikes Home">
-            <div className="logo-brand">
-              <span className="logo-icon">🚀</span>
-              <span className="logo-text">Growth<span className="logo-accent">Hikes</span></span>
-            </div>
+          <Link to="/" className="logo" aria-label="GrowthHikes Home" style={{ textDecoration: 'none' }}>
+            <Logo height={34} variant="full" />
           </Link>
 
           {/* Desktop Nav Links */}

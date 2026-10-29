@@ -16,11 +16,14 @@ import Blog from './pages/Blog';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 
-// Scroll to top on route change
+// Scroll to top on route change & prevent scroll jump on refresh
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
 

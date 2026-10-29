@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Rocket, ShieldCheck, Instagram, Phone, Mail, ArrowUpRight, Sparkles, MapPin, Globe } from 'lucide-react';
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE, CONTACT_PHONE_IN, CONTACT_PHONE_US } from '../data/servicesData';
+import Logo from './Logo';
 
 export default function Footer({ onOpenBooking }) {
   const currentYear = new Date().getFullYear();
@@ -200,21 +201,8 @@ export default function Footer({ onOpenBooking }) {
         }}>
           {/* Brand Info */}
           <div style={{ gridColumn: 'span 1' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px', color: '#fff' }}>
-              <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '10px',
-                background: 'linear-gradient(135deg, #00c896 0%, #6366f1 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                <Rocket size={20} color="#fff" />
-              </div>
-              <span style={{ fontSize: '1.35rem', fontWeight: 800, letterSpacing: '-0.02em', color: '#fff', fontFamily: 'var(--font-display)' }}>
-                GrowthHikes
-              </span>
+            <div style={{ marginBottom: '16px' }}>
+              <Logo height={38} variant="full" />
             </div>
 
             <p style={{ lineHeight: 1.6, marginBottom: '20px', color: '#94a3b8' }}>
