@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Rocket, ShieldCheck, Zap, Globe, Users, Trophy, Target, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { CONTACT_PHONE_IN, CONTACT_PHONE_US } from '../data/servicesData';
+import SideLabel from '../components/SideLabel';
+import { Rocket, ShieldCheck, Zap, Globe, Users, Trophy, Target, Sparkles, ArrowRight, CheckCircle2, Play, Lightbulb, Compass, Award } from 'lucide-react';
+import { CONTACT_PHONE_IN, CONTACT_PHONE_US, WHATSAPP_LINK } from '../data/servicesData';
 
 export default function About({ onOpenBooking }) {
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
+
   return (
-    <div style={{ padding: '40px 0 80px 0' }}>
-      {/* Header Banner */}
+    <div style={{ background: '#030407', color: '#fff', minHeight: '100vh', padding: '40px 0 80px 0' }}>
+      {/* 1. Header Banner */}
       <section style={{
-        padding: '70px 0 60px 0',
+        padding: '70px 0 50px 0',
         textAlign: 'center',
-        background: 'radial-gradient(circle at 50% 20%, rgba(0, 200, 150, 0.1) 0%, transparent 70%)',
+        background: 'radial-gradient(circle at 50% 20%, rgba(29, 220, 168, 0.12) 0%, transparent 70%)',
       }}>
         <div className="container" style={{ maxWidth: '880px', margin: '0 auto' }}>
           <div style={{
@@ -19,15 +22,15 @@ export default function About({ onOpenBooking }) {
             gap: '8px',
             padding: '6px 16px',
             borderRadius: '9999px',
-            background: 'rgba(0, 200, 150, 0.1)',
-            border: '1px solid rgba(0, 200, 150, 0.3)',
-            color: '#00c896',
+            background: 'rgba(29, 220, 168, 0.1)',
+            border: '1px solid rgba(29, 220, 168, 0.3)',
+            color: '#1ddca8',
             fontSize: '0.85rem',
             fontWeight: 700,
             marginBottom: '20px',
           }}>
             <Sparkles size={14} />
-            <span>ABOUT GROWTHHIKES</span>
+            <span>WHO WE ARE · GROWTHHIKES</span>
           </div>
 
           <h1 style={{
@@ -39,15 +42,14 @@ export default function About({ onOpenBooking }) {
             marginBottom: '24px',
             fontFamily: 'var(--font-display)',
           }}>
-            Where Cinematic Visuals Meet{' '}
+            Where Strategy Meets{' '}
             <span style={{
-              background: 'linear-gradient(135deg, #00c896 0%, #2cc295 50%, #6366f1 100%)',
+              background: 'linear-gradient(135deg, #1ddca8 0%, #8dffe0 50%, #6366f1 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>
-              High-Velocity Software
+              Cinematic Execution
             </span>
-            .
           </h1>
 
           <p style={{
@@ -55,254 +57,297 @@ export default function About({ onOpenBooking }) {
             color: '#94a3b8',
             lineHeight: 1.7,
             maxWidth: '750px',
-            margin: '0 auto',
+            margin: '0 auto 36px auto',
           }}>
-            GrowthHikes was founded on a singular conviction: modern brands cannot afford to disconnect their media production from their software engineering. We build the full growth engine under one roof.
+            GrowthHikes was founded on a singular conviction: modern brands cannot afford to disconnect their viral media production from their software engineering. We build the full growth engine under one roof.
           </p>
-        </div>
-      </section>
 
-      {/* Story & Philosophy Section */}
-      <section style={{ padding: '60px 0' }}>
-        <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
-            gap: '40px',
-            alignItems: 'center',
-          }}>
-            <div>
-              <span style={{ color: '#00c896', fontWeight: 700, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                Our Genesis
-              </span>
-              <h2 style={{
-                fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
-                fontWeight: 800,
-                color: '#fff',
-                marginTop: '10px',
-                marginBottom: '20px',
-                fontFamily: 'var(--font-display)',
-              }}>
-                The Digital Growth Studio for the Next Decade
-              </h2>
-              <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '18px' }}>
-                Most creative agencies have no clue how to deploy an event-driven serverless architecture, calibrate Meta Conversions API (CAPI), or configure autonomous AI calling agents.
-              </p>
-              <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '24px' }}>
-                Conversely, traditional software dev shops don’t know how to shoot 4K FPV drone footage that stops thumbs in the first 2 seconds of an Instagram Reel. GrowthHikes eliminates this compromise. We deploy certified drone pilots alongside Senior Full-Stack and AI engineers.
-              </p>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f8fafc' }}>
-                  <CheckCircle2 size={18} color="#00c896" />
-                  <span>DGCA Certified Commercial Drone Pilots & Cinema Colorists</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f8fafc' }}>
-                  <CheckCircle2 size={18} color="#00c896" />
-                  <span>Production-Grade React Native, Flutter, and Next.js Developers</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f8fafc' }}>
-                  <CheckCircle2 size={18} color="#00c896" />
-                  <span>Meta Blueprint & Google Premier Certified Performance Media Buyers</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f8fafc' }}>
-                  <CheckCircle2 size={18} color="#00c896" />
-                  <span>Proprietary WhatsApp Cloud API & Autonomous Voice AI Stacks</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Interactive Stats Visual Card */}
-            <div style={{
-              background: 'linear-gradient(145deg, rgba(18, 20, 30, 0.95), rgba(10, 11, 16, 0.95))',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '24px',
-              padding: '40px',
-              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5)',
-              position: 'relative',
-              overflow: 'hidden',
-            }}>
-              <div style={{
-                position: 'absolute',
-                top: '-50px',
-                right: '-50px',
-                width: '180px',
-                height: '180px',
-                borderRadius: '50%',
-                background: 'rgba(0, 200, 150, 0.15)',
-                filter: 'blur(40px)',
-              }} />
-
-              <h3 style={{ color: '#fff', fontSize: '1.4rem', fontWeight: 800, marginBottom: '24px' }}>
-                Growth Metrics by the Numbers
-              </h3>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-                <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '16px' }}>
-                  <div style={{ fontSize: '2.4rem', fontWeight: 900, color: '#00c896' }}>14+</div>
-                  <div style={{ color: '#94a3b8', fontSize: '0.88rem' }}>Full-Spectrum Services</div>
-                </div>
-                <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '16px' }}>
-                  <div style={{ fontSize: '2.4rem', fontWeight: 900, color: '#6366f1' }}>21+</div>
-                  <div style={{ color: '#94a3b8', fontSize: '0.88rem' }}>Mastered Technologies</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '2.4rem', fontWeight: 900, color: '#38bdf8' }}>4.8x</div>
-                  <div style={{ color: '#94a3b8', fontSize: '0.88rem' }}>Average Client ROAS</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '2.4rem', fontWeight: 900, color: '#facc15' }}>99.8%</div>
-                  <div style={{ color: '#94a3b8', fontSize: '0.88rem' }}>Enterprise SLA Uptime</div>
-                </div>
-              </div>
-
-              <div style={{
-                marginTop: '32px',
-                padding: '16px',
-                borderRadius: '12px',
-                background: 'rgba(0, 200, 150, 0.08)',
-                border: '1px solid rgba(0, 200, 150, 0.2)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-              }}>
-                <ShieldCheck size={24} color="#00c896" />
-                <div style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>
-                  <strong>Enterprise Ready:</strong> End-to-end NDA protection, strict IP transfer, and dedicated sprint managers.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ecosystem Sibling Network */}
-      <section style={{
-        padding: '70px 0',
-        background: 'rgba(15, 17, 26, 0.6)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
-      }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 40px auto' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-display)' }}>
-              The Infortts Ecosystem Synergies
-            </h2>
-            <p style={{ color: '#94a3b8', fontSize: '1rem', marginTop: '8px' }}>
-              GrowthHikes draws upon the technical backbone, distributed cloud infrastructure, and proprietary tooling of the wider Infortts technology group.
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '20px',
-          }}>
-            <div style={{
-              background: 'rgba(18, 20, 30, 0.85)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '16px',
-              padding: '24px',
-            }}>
-              <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#00c896', marginBottom: '8px' }}>
-                Infortts Group
-              </div>
-              <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.6 }}>
-                High-frequency trading networks, distributed microservices, private cloud deployments, and resilient multi-region infrastructure.
-              </p>
-            </div>
-
-            <div style={{
-              background: 'rgba(18, 20, 30, 0.85)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '16px',
-              padding: '24px',
-            }}>
-              <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#6366f1', marginBottom: '8px' }}>
-                NaiBooking
-              </div>
-              <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.6 }}>
-                Next-gen salon and wellness ERP platform powering appointment scheduling, dynamic pricing, and staff management for service fleets.
-              </p>
-            </div>
-
-            <div style={{
-              background: 'rgba(18, 20, 30, 0.85)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '16px',
-              padding: '24px',
-            }}>
-              <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#38bdf8', marginBottom: '8px' }}>
-                Shubham Computers
-              </div>
-              <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.6 }}>
-                Hardware lifecycle management, on-prem networking solutions, and enterprise IT hardware procurement across northern India.
-              </p>
-            </div>
-
-            <div style={{
-              background: 'rgba(18, 20, 30, 0.85)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '16px',
-              padding: '24px',
-            }}>
-              <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#facc15', marginBottom: '8px' }}>
-                FortheJanta
-              </div>
-              <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.6 }}>
-                Civic tech and public interest platform providing automated government scheme discovery and citizen assistance tools.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Global Presence & Call to Action */}
-      <section style={{ padding: '80px 0 20px 0' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#fff', marginBottom: '16px', fontFamily: 'var(--font-display)' }}>
-            Ready to Build Your Growth Engine?
-          </h2>
-          <p style={{ color: '#94a3b8', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '32px' }}>
-            Whether you want to launch a nationwide drone campaign, rebuild your web platform on Next.js, or automate your support desk with AI—our team is ready.
-          </p>
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
-              onClick={onOpenBooking}
+              onClick={() => onOpenBooking ? onOpenBooking() : null}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '10px',
-                padding: '14px 32px',
-                borderRadius: '12px',
-                background: 'linear-gradient(135deg, #00c896 0%, #059669 100%)',
-                color: '#ffffff',
-                fontWeight: 700,
+                padding: '14px 34px',
+                borderRadius: '999px',
+                background: 'linear-gradient(135deg, #1ddca8 0%, #00c896 100%)',
+                color: '#000000',
+                fontWeight: 800,
                 fontSize: '1rem',
                 border: 'none',
                 cursor: 'pointer',
+                boxShadow: '0 8px 25px rgba(29, 220, 168, 0.35)',
               }}
             >
-              <span>Schedule Strategy Call</span>
+              <span>Get Started Now</span>
               <ArrowRight size={18} />
             </button>
-            <Link
-              to="/contact"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '14px 28px',
-                borderRadius: '12px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                color: '#fff',
-                fontWeight: 600,
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                textDecoration: 'none',
-              }}
-            >
-              <span>Direct Hotlines & Inquiries</span>
-            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Who We Are (Talencee waw Section) */}
+      <section style={{ padding: '60px 0 90px 0' }}>
+        <div className="container">
+          <div style={{ display: 'flex', gap: '32px' }}>
+            <SideLabel text="WHO WE ARE" theme="dark" />
+
+            <div style={{ flex: 1, minWidth: 0 }}>
+              {/* Video Story Reel Showcase */}
+              <div style={{
+                position: 'relative',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                aspectRatio: '16/8',
+                background: '#0a0d14',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                marginBottom: '56px',
+                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6)',
+              }}>
+                {!isPlayingVideo ? (
+                  <div
+                    onClick={() => setIsPlayingVideo(true)}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      position: 'relative',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: 'linear-gradient(180deg, rgba(3, 4, 7, 0.4) 0%, rgba(3, 4, 7, 0.85) 100%)',
+                    }}
+                  >
+                    <div style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'radial-gradient(circle at 50% 50%, rgba(29, 220, 168, 0.18) 0%, transparent 60%)',
+                    }} />
+
+                    {/* Animated Ripple Pulse */}
+                    <div style={{
+                      position: 'relative',
+                      width: '90px',
+                      height: '90px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '16px',
+                    }}>
+                      <span style={{
+                        position: 'absolute',
+                        inset: 0,
+                        borderRadius: '50%',
+                        border: '2px solid rgba(29, 220, 168, 0.5)',
+                        animation: 'ripple 2s infinite ease-out',
+                      }} />
+                      <div style={{
+                        width: '74px',
+                        height: '74px',
+                        borderRadius: '50%',
+                        background: 'linear-gradient(135deg, #1ddca8 0%, #00c896 100%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#000',
+                        boxShadow: '0 0 30px rgba(29, 220, 168, 0.6)',
+                        zIndex: 2,
+                      }}>
+                        <Play size={28} fill="#000" style={{ marginLeft: '4px' }} />
+                      </div>
+                    </div>
+
+                    <span style={{
+                      fontSize: '0.85rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.15em',
+                      textTransform: 'uppercase',
+                      color: '#ffffff',
+                      background: 'rgba(29, 220, 168, 0.2)',
+                      padding: '6px 16px',
+                      borderRadius: '999px',
+                      border: '1px solid rgba(29, 220, 168, 0.4)',
+                    }}>
+                      WATCH OUR STUDIO REEL
+                    </span>
+                  </div>
+                ) : (
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                    title="GrowthHikes Studio Showcase"
+                    style={{ width: '100%', height: '100%', border: 'none' }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                )}
+              </div>
+
+              {/* 3 Strategic Pillars (Talencee waw-features) */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '24px',
+              }}>
+                {/* Pillar 1 */}
+                <div style={{
+                  background: 'rgba(12, 16, 24, 0.75)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  borderRadius: '20px',
+                  padding: '32px',
+                  transition: 'all 0.3s ease',
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '14px',
+                    background: 'rgba(29, 220, 168, 0.12)',
+                    border: '1px solid rgba(29, 220, 168, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#1ddca8',
+                    marginBottom: '20px',
+                  }}>
+                    <Rocket size={24} />
+                  </div>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
+                    Fast Execution
+                  </h3>
+                  <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.65 }}>
+                    Quick turnarounds, rapid video cutting, and continuous agile deployments keep your business moving forward without bureaucratic delays.
+                  </p>
+                </div>
+
+                {/* Pillar 2 */}
+                <div style={{
+                  background: 'rgba(12, 16, 24, 0.75)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  borderRadius: '20px',
+                  padding: '32px',
+                  transition: 'all 0.3s ease',
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '14px',
+                    background: 'rgba(56, 189, 248, 0.12)',
+                    border: '1px solid rgba(56, 189, 248, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#38bdf8',
+                    marginBottom: '20px',
+                  }}>
+                    <Lightbulb size={24} />
+                  </div>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
+                    Creative Expertise
+                  </h3>
+                  <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.65 }}>
+                    Fresh storytelling, cinematic drone angles, and compelling hooks designed to transform ordinary brands into category market leaders.
+                  </p>
+                </div>
+
+                {/* Pillar 3 */}
+                <div style={{
+                  background: 'rgba(12, 16, 24, 0.75)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  borderRadius: '20px',
+                  padding: '32px',
+                  transition: 'all 0.3s ease',
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '14px',
+                    background: 'rgba(99, 102, 241, 0.12)',
+                    border: '1px solid rgba(99, 102, 241, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#818cf8',
+                    marginBottom: '20px',
+                  }}>
+                    <Compass size={24} />
+                  </div>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
+                    Strategic Thinking
+                  </h3>
+                  <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.65 }}>
+                    Every deliverable is guided by rigorous financial direction, conversion analytics, smart audience modeling, and purposeful execution.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Global Presence & Footprint */}
+      <section style={{
+        padding: '80px 0',
+        background: '#040608',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+      }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', fontWeight: 800, color: '#fff', marginBottom: '16px', fontFamily: 'var(--font-display)' }}>
+            Operating Globally Across India & North America
+          </h2>
+          <p style={{ color: '#94a3b8', fontSize: '1.05rem', maxWidth: '640px', margin: '0 auto 48px auto' }}>
+            Headquartered in Haryana & Delhi NCR, with dedicated commercial drone hubs and partner engineering desks in the US.
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px',
+            maxWidth: '900px',
+            margin: '0 auto',
+          }}>
+            <div style={{
+              background: 'rgba(16, 20, 28, 0.8)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '16px',
+              padding: '28px',
+              textAlign: 'left',
+            }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#1ddca8', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+                INDIA HEADQUARTERS
+              </div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>
+                Delhi NCR &amp; Haryana
+              </h3>
+              <p style={{ color: '#94a3b8', fontSize: '0.92rem', lineHeight: 1.6 }}>
+                Production studio, DGCA-certified drone fleet, AI engineering labs, and client consultation center.
+              </p>
+              <div style={{ marginTop: '14px', fontSize: '0.9rem', color: '#1ddca8', fontWeight: 600 }}>
+                {CONTACT_PHONE_IN}
+              </div>
+            </div>
+
+            <div style={{
+              background: 'rgba(16, 20, 28, 0.8)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '16px',
+              padding: '28px',
+              textAlign: 'left',
+            }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#38bdf8', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+                NORTH AMERICA DESK
+              </div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fff', marginBottom: '8px' }}>
+                San Francisco &amp; New York
+              </h3>
+              <p style={{ color: '#94a3b8', fontSize: '0.92rem', lineHeight: 1.6 }}>
+                International client accounts, enterprise cloud architecture consulting, and high-growth venture partnerships.
+              </p>
+              <div style={{ marginTop: '14px', fontSize: '0.9rem', color: '#38bdf8', fontWeight: 600 }}>
+                {CONTACT_PHONE_US}
+              </div>
+            </div>
           </div>
         </div>
       </section>

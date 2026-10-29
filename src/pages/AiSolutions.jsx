@@ -1,279 +1,266 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AiAgentsDemo from '../components/AiAgentsDemo';
-import { Sparkles, Bot, PhoneCall, MessageSquare, Cpu, ShieldCheck, ArrowRight, Zap, CheckCircle2 } from 'lucide-react';
+import SideLabel from '../components/SideLabel';
+import { Sparkles, Bot, PhoneCall, MessageSquare, Cpu, ShieldCheck, ArrowRight, Zap, CheckCircle2, Play } from 'lucide-react';
+import { WHATSAPP_LINK } from '../data/servicesData';
 
 export default function AiSolutions({ onOpenBooking }) {
   return (
-    <div style={{ padding: '40px 0 80px 0' }}>
-      {/* Header Banner */}
-      <section style={{
-        padding: '70px 0 50px 0',
-        textAlign: 'center',
-        background: 'radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
-      }}>
-        <div className="container" style={{ maxWidth: '880px', margin: '0 auto' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 16px',
-            borderRadius: '9999px',
-            background: 'rgba(99, 102, 241, 0.15)',
-            border: '1px solid rgba(99, 102, 241, 0.35)',
-            color: '#a5b4fc',
-            fontSize: '0.85rem',
-            fontWeight: 700,
-            marginBottom: '20px',
-          }}>
-            <Sparkles size={14} />
-            <span>ENTERPRISE AI ARCHITECTURE</span>
+    <div style={{ background: '#050505', color: '#fff', minHeight: '100vh' }}>
+      {/* 1. Cyber AI Hero Section */}
+      <section className="aihero" style={{ minHeight: '85vh', padding: '120px 0 60px 0', position: 'relative', overflow: 'hidden' }}>
+        {/* Glow */}
+        <div className="aihero-bg-layer" />
+        <div className="aihero-glow" />
+
+        {/* Data Streams Falling */}
+        <div className="data-streams" aria-hidden="true">
+          <div className="stream stream-1" />
+          <div className="stream stream-2" />
+          <div className="stream stream-3" />
+          <div className="stream stream-4" />
+          <div className="stream stream-5" />
+          <div className="stream stream-6" />
+        </div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
+          {/* Eyebrow badge */}
+          <div className="aihero-badge" style={{ marginBottom: '24px' }}>
+            <span>AUTONOMOUS NEURAL ARCHITECTURE</span>
           </div>
 
-          <h1 style={{
-            fontSize: 'clamp(2.4rem, 5vw, 4rem)',
+          <h1 className="aihero-title" style={{
+            fontSize: 'clamp(2.5rem, 5.5vw, 4.4rem)',
             fontWeight: 800,
-            color: '#fff',
             lineHeight: 1.15,
-            letterSpacing: '-0.03em',
+            letterSpacing: '-0.025em',
             marginBottom: '24px',
             fontFamily: 'var(--font-display)',
           }}>
-            Autonomous AI Agents &{' '}
-            <span style={{
-              background: 'linear-gradient(135deg, #6366f1 0%, #38bdf8 50%, #00c896 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
-              Conversational Workflows
-            </span>
+            AI-POWERED SYSTEMS FOR <br />
+            <span style={{ color: '#3fe0c2' }}>EXPONENTIAL BUSINESS GROWTH</span>
           </h1>
 
-          <p style={{
-            fontSize: '1.2rem',
-            color: '#94a3b8',
-            lineHeight: 1.7,
-            maxWidth: '740px',
+          <p className="aihero-subtitle" style={{
+            maxWidth: '720px',
             margin: '0 auto 36px auto',
+            fontSize: '1.15rem',
+            color: 'rgba(255, 255, 255, 0.75)',
+            lineHeight: 1.7,
           }}>
-            Eliminate repetitive customer service overhead and accelerate conversions. We engineer custom Retrieval-Augmented Generation (RAG) concierges, real-time voice calling agents, and WhatsApp Cloud API bots.
+            Automate customer engagement, scale outbound acquisition, and eliminate human latency. We build custom multi-agent workflows, 24/7 WhatsApp AI bots, and voice concierges that integrate directly with your databases.
           </p>
 
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="aihero-actions" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '60px' }}>
             <button
               onClick={() => onOpenBooking ? onOpenBooking({ selectedServices: ['support-concierge', 'calling-agents'] }) : null}
+              className="aihero-btn primary"
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
                 padding: '14px 34px',
-                borderRadius: '12px',
-                background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+                borderRadius: '999px',
+                background: 'rgba(44, 194, 149, 0.2)',
+                border: '1px solid rgba(44, 194, 149, 0.7)',
+                boxShadow: '0 0 25px rgba(44, 194, 149, 0.3)',
                 color: '#ffffff',
                 fontWeight: 700,
                 fontSize: '1rem',
-                border: 'none',
                 cursor: 'pointer',
-                boxShadow: '0 8px 25px rgba(99, 102, 241, 0.35)',
               }}
             >
-              <span>Deploy Custom AI Agent</span>
-              <ArrowRight size={18} />
+              Deploy Autonomous AI Agent
             </button>
-          </div>
-        </div>
-      </section>
 
-      {/* 4 Pillars of GrowthHikes AI */}
-      <section style={{ padding: '60px 0 40px 0' }}>
-        <div className="container">
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="aihero-btn ghost"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '14px 26px',
+                borderRadius: '999px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                color: '#fff',
+                fontWeight: 600,
+                textDecoration: 'none',
+              }}
+            >
+              <MessageSquare size={18} color="#3fe0c2" />
+              <span>Test Live Agent on WhatsApp</span>
+            </a>
+          </div>
+
+          {/* 3 Interactive Solution Pillars */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '24px',
+            textAlign: 'left',
           }}>
-            {/* Pillar 1 */}
+            {/* Card 1 */}
             <div style={{
-              background: 'rgba(18, 20, 30, 0.85)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              background: 'rgba(16, 22, 30, 0.8)',
+              border: '1px solid rgba(63, 224, 194, 0.25)',
               borderRadius: '20px',
-              padding: '30px',
+              padding: '32px',
+              position: 'relative',
+              backdropFilter: 'blur(10px)',
             }}>
               <div style={{
-                width: '48px',
-                height: '48px',
+                width: '46px',
+                height: '46px',
                 borderRadius: '12px',
-                background: 'rgba(0, 200, 150, 0.15)',
-                color: '#00c896',
+                background: 'rgba(63, 224, 194, 0.12)',
+                border: '1px solid rgba(63, 224, 194, 0.3)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '20px',
-              }}>
-                <MessageSquare size={24} />
-              </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>
-                WhatsApp Cloud API Bots
-              </h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '16px' }}>
-                Turn WhatsApp into your primary conversion engine. Official Meta Business verification, dynamic product catalog syncing, instant UPI/card payment checkout links, and order tracking.
-              </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: '#cbd5e1' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={14} color="#00c896" />
-                  <span>Meta Official Cloud API Verified</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={14} color="#00c896" />
-                  <span>Sub-second webhook response time</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Pillar 2 */}
-            <div style={{
-              background: 'rgba(18, 20, 30, 0.85)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '20px',
-              padding: '30px',
-            }}>
-              <div style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '12px',
-                background: 'rgba(99, 102, 241, 0.15)',
-                color: '#818cf8',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '20px',
-              }}>
-                <PhoneCall size={24} />
-              </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>
-                Autonomous Voice Calling Agents
-              </h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '16px' }}>
-                Near-zero latency voice models integrated with Twilio telephony. Conducts automated inbound customer support, outbound abandoned cart follow-ups, and booking confirmation calls in natural human tones.
-              </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: '#cbd5e1' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={14} color="#818cf8" />
-                  <span>&lt;600ms latency voice pipeline</span>
-                </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={14} color="#818cf8" />
-                  <span>Supports English, Hindi & regional accents</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Pillar 3 */}
-            <div style={{
-              background: 'rgba(18, 20, 30, 0.85)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '20px',
-              padding: '30px',
-            }}>
-              <div style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '12px',
-                background: 'rgba(6, 182, 212, 0.15)',
-                color: '#38bdf8',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                color: '#3fe0c2',
                 marginBottom: '20px',
               }}>
                 <Bot size={24} />
               </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>
-                RAG Knowledge Support Concierge
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '12px', color: '#fff', fontFamily: 'var(--font-display)' }}>
+                WhatsApp AI Agents
               </h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '16px' }}>
-                Connects directly to your internal Notion, Zendesk, PDF documentation, or ERP database using Pinecone/PostgreSQL vector stores. Resolves complex multi-step queries without human intervention.
+              <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '16px' }}>
+                Instant qualification, automated catalogue browsing, instant checkout, and CRM syncing over official WhatsApp Cloud APIs.
               </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: '#cbd5e1' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.86rem', color: '#cbd5e1' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={14} color="#38bdf8" />
-                  <span>Zero hallucination guardrails</span>
+                  <CheckCircle2 size={15} color="#3fe0c2" />
+                  <span>Sub-second natural responses</span>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={14} color="#38bdf8" />
-                  <span>Escalates seamlessly to human agents</span>
+                  <CheckCircle2 size={15} color="#3fe0c2" />
+                  <span>Automated PDF brochure & quote dispatch</span>
                 </li>
               </ul>
             </div>
 
-            {/* Pillar 4 */}
+            {/* Card 2 */}
             <div style={{
-              background: 'rgba(18, 20, 30, 0.85)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              background: 'rgba(16, 22, 30, 0.8)',
+              border: '1px solid rgba(99, 102, 241, 0.25)',
               borderRadius: '20px',
-              padding: '30px',
+              padding: '32px',
+              position: 'relative',
+              backdropFilter: 'blur(10px)',
             }}>
               <div style={{
-                width: '48px',
-                height: '48px',
+                width: '46px',
+                height: '46px',
                 borderRadius: '12px',
-                background: 'rgba(234, 179, 8, 0.15)',
-                color: '#facc15',
+                background: 'rgba(99, 102, 241, 0.12)',
+                border: '1px solid rgba(99, 102, 241, 0.3)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                color: '#818cf8',
+                marginBottom: '20px',
+              }}>
+                <PhoneCall size={24} />
+              </div>
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '12px', color: '#fff', fontFamily: 'var(--font-display)' }}>
+                Ultra-Low Latency Voice Bots
+              </h3>
+              <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '16px' }}>
+                Real-time human-sounding voice agents for appointment reminders, inbound reception, and customer follow-up calls in English & Hindi.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.86rem', color: '#cbd5e1' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <CheckCircle2 size={15} color="#818cf8" />
+                  <span>&lt;450ms voice latency</span>
+                </li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <CheckCircle2 size={15} color="#818cf8" />
+                  <span>Direct calendar booking integration</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Card 3 */}
+            <div style={{
+              background: 'rgba(16, 22, 30, 0.8)',
+              border: '1px solid rgba(56, 189, 248, 0.25)',
+              borderRadius: '20px',
+              padding: '32px',
+              position: 'relative',
+              backdropFilter: 'blur(10px)',
+            }}>
+              <div style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '12px',
+                background: 'rgba(56, 189, 248, 0.12)',
+                border: '1px solid rgba(56, 189, 248, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#38bdf8',
                 marginBottom: '20px',
               }}>
                 <Cpu size={24} />
               </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#fff', marginBottom: '10px' }}>
-                Multi-Agent Workflow Swarms
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '12px', color: '#fff', fontFamily: 'var(--font-display)' }}>
+                Enterprise RAG & Internal Ops
               </h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '16px' }}>
-                Autonomous agents collaborating across specialized tasks: one scrapes lead data, another drafts personalized outreach, and a third schedules calendar invites directly into your CRM.
+              <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.6, marginBottom: '16px' }}>
+                Knowledge graphs and vector-indexed engines that query your internal Notion, Google Drive, PDFs, and SQL databases securely.
               </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: '#cbd5e1' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.86rem', color: '#cbd5e1' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={14} color="#facc15" />
-                  <span>Full LangGraph & AutoGen frameworks</span>
+                  <CheckCircle2 size={15} color="#38bdf8" />
+                  <span>100% private & SOC2/GDPR compliant</span>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <CheckCircle2 size={14} color="#facc15" />
-                  <span>Complete audit log & compliance tracking</span>
+                  <CheckCircle2 size={15} color="#38bdf8" />
+                  <span>Multi-modal vision and document OCR</span>
                 </li>
               </ul>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* Live Interactive Sandbox */}
+      {/* 2. Interactive AI Multi-Agent Simulator */}
       <AiAgentsDemo />
 
-      {/* Security & Deployment Section */}
-      <section style={{ padding: '60px 0' }}>
-        <div className="container" style={{ maxWidth: '800px', textAlign: 'center' }}>
-          <div style={{
-            background: 'rgba(18, 20, 30, 0.9)',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            borderRadius: '20px',
-            padding: '40px',
-          }}>
-            <ShieldCheck size={36} color="#00c896" style={{ margin: '0 auto 16px auto' }} />
-            <h3 style={{ color: '#fff', fontSize: '1.4rem', fontWeight: 800, marginBottom: '12px' }}>
-              Enterprise Grade Security & Data Privacy
-            </h3>
-            <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '24px' }}>
-              Your company data is never used to train public models. We deploy isolated dedicated instances on AWS/GCP with TLS 1.3 encryption, SOC2 compliance, and zero data-at-rest leakage.
-            </p>
-            <button
-              onClick={() => onOpenBooking ? onOpenBooking({ selectedServices: ['support-concierge', 'calling-agents'] }) : null}
-              className="btn-primary"
-            >
-              <span>Schedule Technical Architecture Call</span>
-              <ArrowRight size={16} />
-            </button>
-          </div>
+      {/* 3. Bottom Consultation Callout */}
+      <section style={{
+        padding: '90px 0',
+        background: '#040608',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        textAlign: 'center',
+      }}>
+        <div className="container" style={{ maxWidth: '780px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', fontWeight: 800, color: '#fff', marginBottom: '16px', fontFamily: 'var(--font-display)' }}>
+            Ready to Automate Your Business Operations?
+          </h2>
+          <p style={{ color: '#94a3b8', fontSize: '1.1rem', lineHeight: 1.7, marginBottom: '36px' }}>
+            Book a 30-minute AI architectural session with our lead engineers. We will analyze your workflows and demonstrate custom agent prototypes live.
+          </p>
+          <button
+            onClick={() => onOpenBooking ? onOpenBooking({ selectedServices: ['support-concierge', 'calling-agents'] }) : null}
+            style={{
+              padding: '16px 38px',
+              borderRadius: '999px',
+              background: 'linear-gradient(135deg, #1ddca8 0%, #00c896 100%)',
+              color: '#000000',
+              fontWeight: 800,
+              fontSize: '1.05rem',
+              cursor: 'pointer',
+              border: 'none',
+              boxShadow: '0 8px 30px rgba(29, 220, 168, 0.4)',
+            }}
+          >
+            Schedule AI Architecture Call
+          </button>
         </div>
       </section>
     </div>

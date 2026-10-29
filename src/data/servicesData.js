@@ -1,5 +1,6 @@
 export const CONTACT_PHONE_IN = '+91 97080 01001';
 export const CONTACT_PHONE_US = '+1 (917) 735-9752';
+export const WHATSAPP_LINK = 'https://wa.me/919708001001';
 export const INSTAGRAM_HANDLE = '@growth_hikes';
 export const INSTAGRAM_URL = 'https://www.instagram.com/growth_hikes';
 
