@@ -506,9 +506,10 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(5, 5, 10, 0.88);
-  backdrop-filter: blur(20px);
-  z-index: 9999;
+  background: rgba(3, 4, 7, 0.96) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -524,12 +525,12 @@ button {
 .mm-panel {
   position: relative;
   width: 100%;
-  max-width: 1180px;
-  max-height: 88vh;
-  background: #0f111a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1200px;
+  max-height: 90vh;
+  background: #090c14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95), 0 0 40px rgba(29, 220, 168, 0.12);
   display: flex;
   overflow: hidden;
   animation: mmPanelIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -659,17 +660,18 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  background: #0e121d !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .mm-service-row:hover,
 .mm-service-row.selected {
-  background: rgba(0, 200, 150, 0.08);
-  border-color: rgba(0, 200, 150, 0.3);
+  background: #151b2b !important;
+  border-color: rgba(29, 220, 168, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   transform: translateX(4px);
 }
 
@@ -711,9 +713,9 @@ button {
 
 .mm-preview-col {
   width: 380px;
-  background: rgba(10, 11, 16, 0.6);
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 36px 30px;
+  background: #0c0f18 !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 60px 28px 32px 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -721,9 +723,14 @@ button {
 
 .mm-preview-card {
   height: 100%;
+  background: #111624 !important;
+  border: 1px solid rgba(29, 220, 168, 0.25);
+  border-radius: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
 }
 
 .mm-preview-top {
