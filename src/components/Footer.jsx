@@ -244,7 +244,7 @@ export default function Footer({ onOpenBooking }) {
               <li><Link to="/" style={{ color: '#94a3b8', textDecoration: 'none' }}>Home</Link></li>
               <li><Link to="/about" style={{ color: '#94a3b8', textDecoration: 'none' }}>About GrowthHikes</Link></li>
               <li><Link to="/services" style={{ color: '#94a3b8', textDecoration: 'none' }}>Services Directory</Link></li>
-              <li><Link to="/ai-solutions" style={{ color: '#94a3b8', textDecoration: 'none' }}>AI Solutions & Bots</Link></li>
+              <li><Link to="/solutions" style={{ color: '#94a3b8', textDecoration: 'none' }}>AI Solutions & Bots</Link></li>
               <li><Link to="/technologies" style={{ color: '#94a3b8', textDecoration: 'none' }}>Technologies Stack</Link></li>
               <li><Link to="/blog" style={{ color: '#94a3b8', textDecoration: 'none' }}>Case Studies & Blog</Link></li>
               <li><Link to="/careers" style={{ color: '#94a3b8', textDecoration: 'none' }}>Careers (We’re Hiring)</Link></li>

@@ -84,6 +84,10 @@ export default function App() {
               element={<AiSolutions onOpenBooking={handleOpenBooking} />}
             />
             <Route
+              path="/solutions"
+              element={<AiSolutions onOpenBooking={handleOpenBooking} />}
+            />
+            <Route
               path="/technologies"
               element={<Technologies onOpenBooking={handleOpenBooking} />}
             />

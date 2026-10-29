@@ -22,7 +22,7 @@ const CAPABILITIES = [
     desc: 'Self-operating multi-agent workflows, 24/7 WhatsApp customer acquisition bots, AI voice receptionists, and seamless CRM synchronization.',
     icon: Bot,
     color: '#8dffe0',
-    link: '/ai-solutions',
+    link: '/solutions',
   },
   {
     id: 'social-media',

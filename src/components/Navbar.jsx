@@ -76,7 +76,7 @@ export default function Navbar({ onOpenBooking }) {
               <ChevronDown className={`nav-services-arrow ${isMegaMenuOpen ? 'nav-arrow-open' : ''}`} size={14} />
             </button>
 
-            <Link to="/ai-solutions" className={isActive('/ai-solutions') ? 'active' : ''}>
+            <Link to="/solutions" className={isActive('/solutions') || isActive('/ai-solutions') ? 'active' : ''}>
               AI Solutions
             </Link>
             <Link to="/technologies" className={isActive('/technologies') ? 'active' : ''}>Technologies</Link>
@@ -149,7 +149,7 @@ export default function Navbar({ onOpenBooking }) {
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
             <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>All Services</Link>
-            <Link to="/ai-solutions" onClick={() => setIsMobileMenuOpen(false)}>AI Solutions</Link>
+            <Link to="/solutions" onClick={() => setIsMobileMenuOpen(false)}>AI Solutions</Link>
             <Link to="/technologies" onClick={() => setIsMobileMenuOpen(false)}>Technologies</Link>
             <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
