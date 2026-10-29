@@ -7,5 +7,6 @@ export default defineConfig({
     port: 26000,
     strictPort: true,
     host: true,
+    allowedHosts: true,
   },
 });

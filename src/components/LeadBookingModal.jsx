@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { PUBLIC_API_URL } from '../config';
 
 export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) {
   if (!isOpen) return null;
@@ -23,10 +24,18 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus({ state: 'loading', message: 'Submitting inquiry to GrowthHikes backend...' });
+    if (!PUBLIC_API_URL) {
+      setStatus({
+        state: 'preview',
+        message: 'The public preview is live, but its inquiry form is not connected to a production endpoint yet.',
+      });
+      return;
+    }
+
+    setStatus({ state: 'loading', message: 'Submitting inquiry to GrowthHikes...' });
 
     try {
-      const res = await fetch('http://localhost:26001/api/leads', {
+      const res = await fetch(`${PUBLIC_API_URL}/api/leads`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -42,10 +51,9 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
         throw new Error(data.error?.message || 'Submission failed');
       }
     } catch (err) {
-      // Local development simulation fallback
       setStatus({
-        state: 'success',
-        message: 'Inquiry captured successfully! An automated WhatsApp and voice follow-up will be dispatched to your phone shortly.',
+        state: 'error',
+        message: 'We could not connect to the inquiry service. Please try again later or contact GrowthHikes through Instagram.',
       });
     }
   };
@@ -101,12 +109,14 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
           Connect directly with our creative directors & custom software engineers.
         </p>
 
-        {status.state === 'success' ? (
+        {status.state === 'success' || status.state === 'preview' ? (
           <div style={{ textAlign: 'center', padding: '24px 0' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(34, 197, 94, 0.15)', color: '#4ade80', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px auto' }}>
               <CheckCircle2 size={36} />
             </div>
-            <h4 style={{ fontSize: '1.3rem', marginBottom: '8px' }}>Inquiry Confirmed!</h4>
+            <h4 style={{ fontSize: '1.3rem', marginBottom: '8px' }}>
+              {status.state === 'preview' ? 'Preview mode' : 'Inquiry confirmed'}
+            </h4>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '24px' }}>{status.message}</p>
             <button onClick={onClose} className="btn-primary" style={{ padding: '10px 24px' }}>Done</button>
           </div>
@@ -120,7 +130,7 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
                 required
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Sahil Rathee"
+                placeholder="Your name"
                 style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-color)', color: '#fff', outline: 'none' }}
               />
             </div>
