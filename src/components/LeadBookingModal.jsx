@@ -1,24 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Send, CheckCircle2, AlertCircle, MessageSquare, Phone, ArrowRight, Sparkles } from 'lucide-react';
 import { PUBLIC_API_URL } from '../config';
 import { CONTACT_PHONE_IN, SERVICES } from '../data/servicesData';
 
 export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) {
-  if (!isOpen) return null;
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     company: '',
-    serviceCategory: initialData.selectedServices?.[0] || 'drone-shooting',
-    budget: initialData.totalUSD ? `$${initialData.totalUSD} / ₹${initialData.totalINR}` : '₹50,000 - ₹1.5 Lakhs ($600 - $1,800)',
-    timeline: initialData.urgency === 'rush' ? 'Priority Rush (<10 Days)' : 'Standard (2-3 Weeks)',
-    notes: initialData.totalUSD ? `Locked in quote: $${initialData.totalUSD} (${initialData.totalINR} INR) for ${initialData.selectedServices?.join(', ')}` : '',
+    serviceCategory: 'drone-shooting',
+    budget: '₹50,000 - ₹1.5 Lakhs ($600 - $1,800)',
+    timeline: 'Standard (2-3 Weeks)',
+    notes: '',
   });
 
   const [submittedData, setSubmittedData] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // Sync state whenever modal opens or initialData changes
+  useEffect(() => {
+    if (isOpen) {
+      setSubmittedData(null);
+      setLoading(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        serviceCategory: initialData?.selectedServices?.[0] || initialData?.serviceCategory || 'drone-shooting',
+        budget: initialData?.totalUSD ? `$${initialData.totalUSD} / ₹${initialData.totalINR}` : (initialData?.budget || '₹50,000 - ₹1.5 Lakhs ($600 - $1,800)'),
+        timeline: initialData?.urgency === 'rush' ? 'Priority Rush (<10 Days)' : (initialData?.timeline || 'Standard (2-3 Weeks)'),
+        notes: initialData?.totalUSD
+          ? `Locked in quote: $${initialData.totalUSD} (${initialData.totalINR} INR) for ${initialData.selectedServices?.join(', ')}`
+          : (initialData?.notes || ''),
+      });
+
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') {
+          onClose();
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [isOpen, initialData, onClose]);
+
+  if (!isOpen) return null;
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -84,8 +119,12 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
   };
 
   return (
-    <div style={{
-      position: 'fixed',
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      style={{
+        position: 'fixed',
       top: 0,
       left: 0,
       right: 0,
