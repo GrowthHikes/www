@@ -16,9 +16,9 @@ export default function TrustedBanner() {
 
   return (
     <div className="trusted-wrapper" style={{
-      background: '#040608',
-      borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-      borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+      background: '#ffffff',
+      borderTop: '1px solid #e2e8f0',
+      borderBottom: '1px solid #e2e8f0',
       padding: '24px 0',
       overflow: 'hidden',
     }}>
@@ -43,16 +43,17 @@ export default function TrustedBanner() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '6px 16px',
-                borderRadius: '8px',
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.06)',
+                padding: '8px 18px',
+                borderRadius: '9999px',
+                background: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
               }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#1ddca8' }} />
-                <span style={{ fontSize: '0.9rem', fontWeight: 700, color: '#f8fafc', letterSpacing: '0.02em' }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981' }} />
+                <span style={{ fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', letterSpacing: '0.01em' }}>
                   {item.name}
                 </span>
-                <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
+                <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 500 }}>
                   [{item.domain}]
                 </span>
               </div>
@@ -60,20 +61,21 @@ export default function TrustedBanner() {
           </div>
         </div>
 
-        {/* Center Badge */}
+        {/* Center Badge - Solid Black Pill for High Contrast */}
         <div className="trusted-text" style={{
           flexShrink: 0,
-          padding: '8px 20px',
+          padding: '10px 24px',
           borderRadius: '9999px',
-          background: 'rgba(29, 220, 168, 0.1)',
-          border: '1px solid rgba(29, 220, 168, 0.3)',
+          background: '#09090b',
+          border: '1px solid #27272a',
           color: '#ffffff',
-          fontSize: '0.85rem',
+          fontSize: '0.82rem',
           fontWeight: 700,
-          letterSpacing: '0.05em',
+          letterSpacing: '0.06em',
           textTransform: 'uppercase',
+          boxShadow: '0 4px 14px rgba(0, 0, 0, 0.15)',
         }}>
-          Industry Leaders Trust <span className="trusted-brand" style={{ color: '#1ddca8' }}>GrowthHikes</span>
+          Industry Leaders Trust <span className="trusted-brand" style={{ color: '#10b981', marginLeft: '4px' }}>GrowthHikes</span>
         </div>
 
         {/* Right Marquee */}
@@ -89,16 +91,17 @@ export default function TrustedBanner() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '6px 16px',
-                borderRadius: '8px',
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.06)',
+                padding: '8px 18px',
+                borderRadius: '9999px',
+                background: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
               }}>
-                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#38bdf8' }} />
-                <span style={{ fontSize: '0.9rem', fontWeight: 700, color: '#f8fafc', letterSpacing: '0.02em' }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#0284c7' }} />
+                <span style={{ fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', letterSpacing: '0.01em' }}>
                   {item.name}
                 </span>
-                <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
+                <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 500 }}>
                   [{item.domain}]
                 </span>
               </div>

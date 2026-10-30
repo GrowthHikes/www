@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import PageLoader from './components/PageLoader';
 import Footer from './components/Footer';
 import LeadBookingModal from './components/LeadBookingModal';
+import CookieConsentBanner from './components/CookieConsentBanner';
 
 // Pages
 import Home from './pages/Home';
@@ -107,6 +108,7 @@ export default function App() {
         </main>
 
         <Footer onOpenBooking={handleOpenBooking} />
+        <CookieConsentBanner />
 
         <LeadBookingModal
           isOpen={isModalOpen}

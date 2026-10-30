@@ -271,11 +271,11 @@ export default function About({ onOpenBooking }) {
         </div>
       </section>
 
-      {/* 2. Who We Are (waw-section with Video Reel & 3 Foundational Pillars) */}
-      <section className="waw-section" style={{ padding: '70px 0 90px 0', background: '#05070c' }}>
+      {/* 2. Who We Are (waw-section with Video Reel & 3 Foundational Pillars - Clean Light Edition) */}
+      <section className="waw-section" style={{ padding: '80px 0 100px 0', background: '#ffffff', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: '32px' }}>
-            <SideLabel text="WHO WE ARE" theme="dark" />
+            <SideLabel text="WHO WE ARE" theme="light" />
 
             <div style={{ flex: 1, minWidth: 0 }}>
               
@@ -286,9 +286,9 @@ export default function About({ onOpenBooking }) {
                 overflow: 'hidden',
                 aspectRatio: '16/8',
                 background: '#0a0d15',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
+                border: '1px solid #27272a',
                 marginBottom: '56px',
-                boxShadow: '0 25px 70px rgba(0, 0, 0, 0.7)',
+                boxShadow: '0 25px 70px rgba(0, 0, 0, 0.25)',
               }}>
                 {!isPlayingVideo ? (
                   <div
@@ -376,85 +376,88 @@ export default function About({ onOpenBooking }) {
                 gap: '24px',
               }}>
                 <div style={{
-                  background: 'rgba(12, 16, 26, 0.8)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
                   borderRadius: '20px',
                   padding: '32px',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
                 }}>
                   <div style={{
                     width: '48px',
                     height: '48px',
                     borderRadius: '14px',
-                    background: 'rgba(29, 220, 168, 0.12)',
-                    border: '1px solid rgba(29, 220, 168, 0.3)',
+                    background: 'rgba(29, 220, 168, 0.15)',
+                    border: '1px solid rgba(29, 220, 168, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#1ddca8',
+                    color: '#059669',
                     marginBottom: '20px',
                   }}>
                     <Rocket size={24} />
                   </div>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#09090b', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
                     Fast Execution
                   </h3>
-                  <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.65 }}>
+                  <p style={{ color: '#475569', fontSize: '0.94rem', lineHeight: 1.65 }}>
                     Quick turnarounds, rapid video cutting, and continuous agile deployments keep your business moving forward without bureaucratic delays.
                   </p>
                 </div>
 
                 <div style={{
-                  background: 'rgba(12, 16, 26, 0.8)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
                   borderRadius: '20px',
                   padding: '32px',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
                 }}>
                   <div style={{
                     width: '48px',
                     height: '48px',
                     borderRadius: '14px',
-                    background: 'rgba(56, 189, 248, 0.12)',
-                    border: '1px solid rgba(56, 189, 248, 0.3)',
+                    background: 'rgba(56, 189, 248, 0.15)',
+                    border: '1px solid rgba(56, 189, 248, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#38bdf8',
+                    color: '#0284c7',
                     marginBottom: '20px',
                   }}>
                     <Lightbulb size={24} />
                   </div>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#09090b', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
                     Creative Expertise
                   </h3>
-                  <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.65 }}>
+                  <p style={{ color: '#475569', fontSize: '0.94rem', lineHeight: 1.65 }}>
                     Fresh storytelling, cinematic drone angles, and compelling hooks designed to transform ordinary brands into category market leaders.
                   </p>
                 </div>
 
                 <div style={{
-                  background: 'rgba(12, 16, 26, 0.8)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
                   borderRadius: '20px',
                   padding: '32px',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
                 }}>
                   <div style={{
                     width: '48px',
                     height: '48px',
                     borderRadius: '14px',
-                    background: 'rgba(99, 102, 241, 0.12)',
-                    border: '1px solid rgba(99, 102, 241, 0.3)',
+                    background: 'rgba(99, 102, 241, 0.15)',
+                    border: '1px solid rgba(99, 102, 241, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#818cf8',
+                    color: '#4f46e5',
                     marginBottom: '20px',
                   }}>
                     <Compass size={24} />
                   </div>
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#fff', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
+                  <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: '#09090b', marginBottom: '12px', fontFamily: 'var(--font-display)' }}>
                     Strategic Thinking
                   </h3>
-                  <p style={{ color: '#94a3b8', fontSize: '0.94rem', lineHeight: 1.65 }}>
+                  <p style={{ color: '#475569', fontSize: '0.94rem', lineHeight: 1.65 }}>
                     Every deliverable is guided by rigorous financial direction, conversion analytics, smart audience modeling, and purposeful execution.
                   </p>
                 </div>
@@ -619,8 +622,8 @@ export default function About({ onOpenBooking }) {
         </div>
       </section>
 
-      {/* 4. Why GrowthHikes vs The Rest (Interactive Do/Don't Cards from Talencee) */}
-      <section className="why-section" style={{ padding: '80px 0 100px 0', background: '#05070c' }}>
+      {/* 4. Why GrowthHikes vs The Rest (Interactive Do/Don't Cards - Clean High-Contrast Edition) */}
+      <section className="why-section" style={{ padding: '90px 0 110px 0', background: '#f8fafc', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <div style={{
@@ -629,9 +632,9 @@ export default function About({ onOpenBooking }) {
               gap: '6px',
               padding: '6px 16px',
               borderRadius: '9999px',
-              background: 'rgba(29, 220, 168, 0.1)',
-              border: '1px solid rgba(29, 220, 168, 0.3)',
-              color: '#1ddca8',
+              background: 'rgba(16, 185, 129, 0.1)',
+              border: '1px solid rgba(16, 185, 129, 0.25)',
+              color: '#059669',
               fontSize: '0.8rem',
               fontWeight: 700,
               marginBottom: '14px',
@@ -642,21 +645,22 @@ export default function About({ onOpenBooking }) {
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: 800,
-              color: '#fff',
+              color: '#09090b',
               fontFamily: 'var(--font-display)',
               marginBottom: '14px',
             }}>
               Why Brands Choose GrowthHikes vs Traditional Agencies
             </h2>
-            <p style={{ color: '#94a3b8', fontSize: '1.05rem', maxWidth: '640px', margin: '0 auto 28px auto' }}>
+            <p style={{ color: '#475569', fontSize: '1.05rem', maxWidth: '640px', margin: '0 auto 28px auto' }}>
               Compare our streamlined, technology-first approach against outdated agency failures.
             </p>
 
             {/* Toggle Switch */}
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(255, 255, 255, 0.12)',
+              background: '#ffffff',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
               borderRadius: '999px',
               padding: '4px',
               gap: '4px',

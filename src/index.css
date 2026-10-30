@@ -877,12 +877,13 @@ button {
 }
 
 /* =========================================================================
-   4. TECH STACK SECTION (Pixelate Nest Style from User Reference)
+   4. TECH STACK SECTION (High-Contrast White Edition)
    ========================================================================= */
 .tech-stack-section {
-  padding: 80px 0;
-  background: radial-gradient(ellipse at 50% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 90px 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .tech-stack-header {
@@ -895,10 +896,11 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: 9999px;
-  background: rgba(0, 200, 150, 0.1);
-  color: #00c896;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #059669;
   font-size: 0.82rem;
   font-weight: 700;
   margin-bottom: 14px;
@@ -907,13 +909,13 @@ button {
 .tech-stack-title {
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 800;
-  color: #ffffff;
+  color: #09090b;
   line-height: 1.2;
   margin-bottom: 14px;
 }
 
 .tech-stack-description {
-  color: #94a3b8;
+  color: #475569;
   font-size: 1.05rem;
   line-height: 1.6;
 }
@@ -931,21 +933,27 @@ button {
   border-radius: 9999px;
   font-size: 0.85rem;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #94a3b8;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
   cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
 }
 
-.tech-tab-btn:hover,
-.tech-tab-btn.active {
-  background: rgba(6, 182, 212, 0.15);
-  border-color: #38bdf8;
-  color: #38bdf8;
+.tech-tab-btn:hover {
+  background: #f1f5f9;
+  color: #09090b;
 }
 
-/* 21+ Tech Badges Cards Grid (As in the uploaded user screenshot) */
+.tech-tab-btn.active {
+  background: #09090b;
+  border-color: #09090b;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(9, 9, 11, 0.2);
+}
+
+/* 21+ Tech Badges Cards Grid (High-Contrast White Edition) */
 .tech-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -954,8 +962,8 @@ button {
 }
 
 .tech-card-item {
-  background: rgba(220, 238, 255, 0.07);
-  border: 1px solid rgba(220, 238, 255, 0.12);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 24px 14px 18px 14px;
   display: flex;
@@ -966,14 +974,14 @@ button {
   text-align: center;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
 .tech-card-item:hover {
-  background: rgba(220, 238, 255, 0.14);
-  border-color: rgba(56, 189, 248, 0.5);
+  background: #ffffff;
+  border-color: #10b981;
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.22);
+  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.16);
 }
 
 .tech-icon-container {
@@ -987,7 +995,7 @@ button {
 .tech-card-name {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #cbd5e1;
+  color: #0f172a;
   letter-spacing: -0.01em;
 }
 
@@ -995,10 +1003,11 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  background: rgba(18, 20, 30, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .tech-stat-block {
@@ -1009,13 +1018,13 @@ button {
   display: block;
   font-size: 2.2rem;
   font-weight: 800;
-  color: #00c896;
+  color: #059669;
   font-family: var(--font-display);
 }
 
 .tech-stat-desc {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 /* Animations */
