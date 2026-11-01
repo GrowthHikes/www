@@ -97,7 +97,7 @@ export const TECHNOLOGIES_LIST = [
   {
     id: 'wordpress',
     name: 'Wordpress',
-    category: 'cms',
+    category: 'frontend',
     color: '#21759b',
     bgTint: 'rgba(33, 117, 155, 0.08)',
     borderTint: 'rgba(33, 117, 155, 0.25)',
@@ -150,8 +150,8 @@ export const TECHNOLOGIES_LIST = [
   },
   {
     id: 'github',
-    name: 'Git hub',
-    category: 'devops',
+    name: 'GitHub',
+    category: 'cloud',
     color: '#ffffff',
     bgTint: 'rgba(255, 255, 255, 0.08)',
     borderTint: 'rgba(255, 255, 255, 0.25)',

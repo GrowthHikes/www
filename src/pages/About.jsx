@@ -124,38 +124,6 @@ const GLOBAL_HUBS = [
   { id: 'syd', name: 'Sydney', region: 'Oceania', lat: -33.87, lon: 151.21, role: 'ANZ Digital Delivery', uptime: '99.97%', latency: '58ms' }
 ];
 
-// Core Team Members
-const TEAM_MEMBERS = [
-  {
-    name: 'Sahil Rathee',
-    role: 'Founder & Head of Systems',
-    bio: 'Directs full-stack product engineering, autonomous AI pipelines, and high-performance digital architecture across GrowthHikes clients.',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
-    tag: 'Systems Architecture'
-  },
-  {
-    name: 'Aman Vashisht',
-    role: 'Lead AI & Full-Stack Engineer',
-    bio: 'Specializes in real-time voice synthesis, WhatsApp Cloud API integrations, and edge-native serverless workflows.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
-    tag: 'Autonomous AI'
-  },
-  {
-    name: 'Karan Sharma',
-    role: 'Cinematography & Drone Director',
-    bio: 'DGCA-certified commercial drone pilot. 500+ flight hours across commercial real estate, corporate headquarters, and high-speed FPV runs.',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
-    tag: '4K FPV Production'
-  },
-  {
-    name: 'Neha Kapoor',
-    role: 'Growth Marketing & ROAS Lead',
-    bio: 'Scales paid acquisition across Meta Reels, YouTube Ads, and Google Performance Max with a focus on verified CAC and conversion economics.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
-    tag: 'Paid Performance'
-  }
-];
-
 export default function About({ onOpenBooking }) {
   const [isPlayingVideo, setIsPlayingVideo] = useState(false);
   const [activePhase, setActivePhase] = useState(0);
@@ -958,100 +926,7 @@ export default function About({ onOpenBooking }) {
         </div>
       </section>
 
-      {/* 6. The Minds Behind GrowthHikes (team-section from Talencee) */}
-      <section className="team-section" style={{ padding: '80px 0 100px 0', background: '#05070c' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '6px 16px',
-              borderRadius: '9999px',
-              background: 'rgba(29, 220, 168, 0.1)',
-              border: '1px solid rgba(29, 220, 168, 0.3)',
-              color: '#1ddca8',
-              fontSize: '0.8rem',
-              fontWeight: 700,
-              marginBottom: '14px',
-            }}>
-              <Users size={14} />
-              <span>THE LEADERSHIP &amp; ENGINEERING DESK</span>
-            </div>
-            <h2 style={{
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
-              fontWeight: 800,
-              color: '#fff',
-              fontFamily: 'var(--font-display)',
-              marginBottom: '12px',
-            }}>
-              The Minds That Deliver
-            </h2>
-            <p style={{ color: '#94a3b8', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
-              Multidisciplinary specialists combining licensed drone piloting, autonomous machine learning, and venture growth engineering.
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '24px',
-          }}>
-            {TEAM_MEMBERS.map((member, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: 'rgba(12, 16, 26, 0.85)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderRadius: '22px',
-                  padding: '28px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
-                }}
-              >
-                <div>
-                  <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', aspectRatio: '1/1', marginBottom: '20px' }}>
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <span style={{
-                      position: 'absolute',
-                      bottom: '12px',
-                      left: '12px',
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      color: '#1ddca8',
-                      background: 'rgba(0, 0, 0, 0.75)',
-                      padding: '4px 10px',
-                      borderRadius: '999px',
-                      border: '1px solid rgba(29, 220, 168, 0.4)',
-                    }}>
-                      {member.tag}
-                    </span>
-                  </div>
-
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>
-                    {member.name}
-                  </h3>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#1ddca8', marginBottom: '14px' }}>
-                    {member.role}
-                  </div>
-                  <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                    {member.bio}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Bottom Discovery Session CTA */}
+      {/* 6. Bottom Discovery Session CTA */}
       <section style={{
         padding: '90px 0',
         background: '#04060a',

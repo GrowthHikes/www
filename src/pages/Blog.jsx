@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BLOG_POSTS } from '../data/blogData';
-import { Sparkles, Calendar, Clock, ArrowRight, User, Search, Tag } from 'lucide-react';
+import { Sparkles, Calendar, Clock, ArrowRight, User, Search, Tag, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Blog({ onOpenBooking }) {
   const [activeTag, setActiveTag] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedPost, setSelectedPost] = useState(null);
+
+  // Close modal on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setSelectedPost(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const tags = ['All', 'Cinematography', 'Social Media', 'Paid Ads', 'Meta CAPI', 'AI & Automation', 'WhatsApp API', 'Local SEO'];
 
@@ -126,6 +135,7 @@ export default function Blog({ onOpenBooking }) {
             {filteredPosts.map((post) => (
               <div
                 key={post.id}
+                onClick={() => setSelectedPost(post)}
                 style={{
                   background: 'rgba(18, 20, 30, 0.85)',
                   border: '1px solid rgba(255, 255, 255, 0.08)',
@@ -135,7 +145,18 @@ export default function Blog({ onOpenBooking }) {
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
-                  transition: 'transform 0.2s ease, border-color 0.2s ease',
+                  transition: 'all 0.25s ease',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(0, 200, 150, 0.4)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 15px 35px rgba(0, 200, 150, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
                 }}
               >
                 <div>
@@ -160,7 +181,7 @@ export default function Blog({ onOpenBooking }) {
                   </div>
 
                   <h3 style={{
-                    fontSize: '1.3rem',
+                    fontSize: '1.25rem',
                     fontWeight: 800,
                     color: '#fff',
                     lineHeight: 1.35,
@@ -199,23 +220,19 @@ export default function Blog({ onOpenBooking }) {
                     By {post.author} • {post.date}
                   </div>
 
-                  <button
-                    onClick={() => setSelectedPost(post)}
+                  <div
                     style={{
-                      background: 'transparent',
-                      border: 'none',
                       color: '#00c896',
                       fontWeight: 700,
                       fontSize: '0.88rem',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '4px',
-                      cursor: 'pointer',
                     }}
                   >
                     <span>Read Teardown</span>
                     <ArrowRight size={14} />
-                  </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -225,20 +242,25 @@ export default function Blog({ onOpenBooking }) {
 
       {/* Article Detail Modal */}
       {selectedPost && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(5, 5, 10, 0.85)',
-          backdropFilter: 'blur(16px)',
-          zIndex: 1000,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '24px',
-        }}>
+        <div 
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedPost(null);
+          }}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(5, 5, 10, 0.85)',
+            backdropFilter: 'blur(16px)',
+            zIndex: 1000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '24px',
+          }}
+        >
           <div style={{
             background: '#12141e',
             border: '1px solid rgba(255, 255, 255, 0.12)',
@@ -260,7 +282,6 @@ export default function Blog({ onOpenBooking }) {
                 background: 'rgba(255, 255, 255, 0.06)',
                 border: 'none',
                 color: '#fff',
-                fontSize: '1.2rem',
                 width: '36px',
                 height: '36px',
                 borderRadius: '50%',
@@ -270,7 +291,7 @@ export default function Blog({ onOpenBooking }) {
                 justifyContent: 'center',
               }}
             >
-              ✕
+              <X size={18} />
             </button>
 
             <span style={{
