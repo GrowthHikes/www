@@ -28,13 +28,15 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 93.75%; /* Scales 16px baseline down to 15px across all rem units site-wide */
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  font-size: 0.95rem; /* Balanced base body text size */
+  line-height: 1.55;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }

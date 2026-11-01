@@ -87,7 +87,6 @@ export default function AiSolutions({ onOpenBooking }) {
   const [activeNode, setActiveNode] = useState(null);
   const [typedPrompt, setTypedPrompt] = useState('// SYSTEM ONLINE · READY');
   const [bootStep, setBootStep] = useState(3);
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const typingTimerRef = useRef(null);
   const motherboardRef = useRef(null);
 
@@ -116,14 +115,6 @@ export default function AiSolutions({ onOpenBooking }) {
 
     return () => clearInterval(typingTimerRef.current);
   }, [activeNode]);
-
-  // Testimonial auto-rotator
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveTestimonial(prev => (prev + 1) % CLIENT_TESTIMONIALS.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div style={{ background: '#030407', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
@@ -852,133 +843,8 @@ export default function AiSolutions({ onOpenBooking }) {
       {/* 4. Interactive Live Agent Simulator (Working Chat & Voice Concierge Demo) */}
       <AiAgentsDemo />
 
-      {/* 5. Client ROI Testimonials & Performance Metrics Carousel */}
-      <section style={{ padding: '80px 0 100px 0', background: '#030407', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '6px 16px',
-              borderRadius: '9999px',
-              background: 'rgba(29, 220, 168, 0.1)',
-              border: '1px solid rgba(29, 220, 168, 0.3)',
-              color: '#1ddca8',
-              fontSize: '0.8rem',
-              fontWeight: 700,
-              marginBottom: '14px',
-            }}>
-              <Star size={14} />
-              <span>MEASURABLE BUSINESS IMPACT</span>
-            </div>
-            <h2 style={{
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
-              fontWeight: 800,
-              color: '#fff',
-              fontFamily: 'var(--font-display)',
-              marginBottom: '12px',
-            }}>
-              Proven Outcomes Across Industries
-            </h2>
-            <p style={{ color: '#94a3b8', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
-              Real metrics from live client deployments powered by GrowthHikes autonomous pipelines.
-            </p>
-          </div>
-
-          {/* Testimonial Cards Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '24px',
-          }}>
-            {CLIENT_TESTIMONIALS.map((t, idx) => (
-              <div
-                key={t.id}
-                style={{
-                  background: 'rgba(12, 16, 26, 0.85)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderRadius: '22px',
-                  padding: '28px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                    <span style={{
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      color: '#1ddca8',
-                      background: 'rgba(29, 220, 168, 0.1)',
-                      border: '1px solid rgba(29, 220, 168, 0.3)',
-                      padding: '4px 10px',
-                      borderRadius: '999px',
-                    }}>
-                      {t.tag}
-                    </span>
-                    <div style={{ display: 'flex', gap: '3px' }}>
-                      {[...Array(t.rating)].map((_, i) => (
-                        <Star key={i} size={14} fill="#fbbf24" color="#fbbf24" />
-                      ))}
-                    </div>
-                  </div>
-
-                  <p style={{ color: '#cbd5e1', fontSize: '0.94rem', lineHeight: 1.65, marginBottom: '20px' }}>
-                    "{t.text}"
-                  </p>
-                </div>
-
-                <div>
-                  {/* Metric Pill */}
-                  <div style={{
-                    padding: '8px 12px',
-                    background: 'rgba(29, 220, 168, 0.08)',
-                    border: '1px solid rgba(29, 220, 168, 0.2)',
-                    borderRadius: '10px',
-                    color: '#1ddca8',
-                    fontSize: '0.82rem',
-                    fontWeight: 700,
-                    marginBottom: '16px',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                  }}>
-                    <TrendingUp size={14} />
-                    <span>{t.metric}</span>
-                  </div>
-
-                  {/* Author */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      style={{
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: '50%',
-                        objectFit: 'cover',
-                        border: '1.5px solid rgba(29, 220, 168, 0.4)',
-                      }}
-                    />
-                    <div>
-                      <h4 style={{ fontSize: '0.92rem', fontWeight: 700, color: '#fff', margin: 0 }}>
-                        {t.name}
-                      </h4>
-                      <span style={{ fontSize: '0.78rem', color: '#94a3b8' }}>
-                        {t.role}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 5. Client ROI Testimonials & Performance Metrics Carousel (Hidden) */}
+      {/* "Proven Outcomes Across Industries" section hidden per request */}
 
       {/* 6. Bottom Schedule Consultation Callout */}
       <section style={{
