@@ -411,6 +411,12 @@ export default function AiSolutions({ onOpenBooking }) {
             overflow: 'hidden',
           }}
           onClick={() => setActiveNode(null)}
+          onMouseLeave={() => setActiveNode(null)}
+          onMouseMove={(e) => {
+            if (e.target === e.currentTarget) {
+              setActiveNode(null);
+            }
+          }}
         >
           {/* Background scanlines & grid */}
           <div className="bg-grid-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.15 }} />

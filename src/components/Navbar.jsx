@@ -13,6 +13,7 @@ const PHONE_NUMBERS = [
 export default function Navbar({ onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [megaMenuCategory, setMegaMenuCategory] = useState('all');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedPhone, setSelectedPhone] = useState(PHONE_NUMBERS[0]);
   const [isPhoneDropdownOpen, setIsPhoneDropdownOpen] = useState(false);
@@ -70,14 +71,28 @@ export default function Navbar({ onOpenBooking }) {
             {/* Services with MegaMenu */}
             <button
               className={`nav-services-btn ${isMegaMenuOpen || location.pathname.startsWith('/services') ? 'active' : ''}`}
-              onClick={() => setIsMegaMenuOpen(!isMegaMenuOpen)}
+              onClick={() => {
+                setMegaMenuCategory('all');
+                setIsMegaMenuOpen(!isMegaMenuOpen);
+              }}
+              onMouseEnter={() => {
+                setMegaMenuCategory('all');
+                setIsMegaMenuOpen(true);
+              }}
               aria-expanded={isMegaMenuOpen}
             >
               <span>Services</span>
               <ChevronDown className={`nav-services-arrow ${isMegaMenuOpen ? 'nav-arrow-open' : ''}`} size={14} />
             </button>
 
-            <Link to="/solutions" className={isActive('/solutions') || isActive('/ai-solutions') ? 'active' : ''}>
+            <Link 
+              to="/solutions" 
+              className={isActive('/solutions') || isActive('/ai-solutions') ? 'active' : ''}
+              onMouseEnter={() => {
+                setMegaMenuCategory('ai');
+                setIsMegaMenuOpen(true);
+              }}
+            >
               AI Solutions
             </Link>
             <Link to="/technologies" className={isActive('/technologies') ? 'active' : ''}>Technologies</Link>
@@ -178,6 +193,7 @@ export default function Navbar({ onOpenBooking }) {
       {/* Full-Screen Mega Menu Overlay */}
       <MegaMenu
         isOpen={isMegaMenuOpen}
+        defaultCategory={megaMenuCategory}
         onClose={() => setIsMegaMenuOpen(false)}
         onOpenBooking={onOpenBooking}
       />

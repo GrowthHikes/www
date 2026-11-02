@@ -3,10 +3,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import { X, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import { SERVICES_CATEGORIES, SERVICES_DATA } from '../data/servicesData';
 
-export default function MegaMenu({ isOpen, onClose, onOpenBooking }) {
-  const [activeCategory, setActiveCategory] = useState('all');
+export default function MegaMenu({ isOpen, onClose, onOpenBooking, defaultCategory = 'all' }) {
+  const [activeCategory, setActiveCategory] = useState(defaultCategory);
   const [hoveredService, setHoveredService] = useState(SERVICES_DATA[0]);
   const navigate = useNavigate();
+
+  // Update category and hovered item when opened or defaultCategory changes
+  useEffect(() => {
+    if (isOpen) {
+      const cat = defaultCategory || 'all';
+      setActiveCategory(cat);
+      const initial = cat === 'all'
+        ? SERVICES_DATA[0]
+        : SERVICES_DATA.find(s => s.category === cat) || SERVICES_DATA[0];
+      setHoveredService(initial);
+    }
+  }, [isOpen, defaultCategory]);
 
   // Scroll locking & Escape key handler
   useEffect(() => {
@@ -43,6 +55,12 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking }) {
     <div
       className="mm-overlay"
       onClick={onClose}
+      onMouseEnter={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      onMouseMove={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
       style={{
         position: 'fixed',
         top: 0,
@@ -54,19 +72,20 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking }) {
         WebkitBackdropFilter: 'blur(24px)',
         zIndex: 99999,
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
-        padding: '20px',
+        padding: '75px 20px 20px 20px',
       }}
     >
       <div
         className="mm-panel"
         onClick={(e) => e.stopPropagation()}
+        onMouseLeave={onClose}
         style={{
           position: 'relative',
           width: '100%',
           maxWidth: '1200px',
-          maxHeight: '90vh',
+          maxHeight: 'calc(100vh - 95px)',
           backgroundColor: '#090c14',
           border: '1px solid rgba(255, 255, 255, 0.12)',
           borderRadius: '24px',
@@ -207,7 +226,16 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking }) {
             {SERVICES_CATEGORIES.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
+                onClick={() => {
+                  setActiveCategory(cat.id);
+                  const firstOfCat = cat.id === 'all' ? SERVICES_DATA[0] : SERVICES_DATA.find(s => s.category === cat.id);
+                  if (firstOfCat) setHoveredService(firstOfCat);
+                }}
+                onMouseEnter={() => {
+                  setActiveCategory(cat.id);
+                  const firstOfCat = cat.id === 'all' ? SERVICES_DATA[0] : SERVICES_DATA.find(s => s.category === cat.id);
+                  if (firstOfCat) setHoveredService(firstOfCat);
+                }}
                 style={{
                   padding: '8px 16px',
                   borderRadius: '9999px',
