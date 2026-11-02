@@ -508,14 +508,15 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(3, 4, 7, 0.88) !important;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  z-index: 99999;
+  background: rgba(3, 4, 7, 0.84) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 100000;
+  pointer-events: auto !important;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 75px 20px 20px 20px;
+  padding: 76px 20px 20px 20px;
   animation: mmOverIn 0.2s ease-out forwards;
 }
 
@@ -528,13 +529,14 @@ button {
   position: relative;
   width: 100%;
   max-width: 1200px;
-  max-height: 90vh;
+  max-height: calc(100vh - 96px);
   background: #090c14 !important;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.98), 0 0 40px rgba(29, 220, 168, 0.12);
   display: flex;
   overflow: hidden;
+  pointer-events: auto !important;
   animation: mmPanelIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -601,6 +603,23 @@ button {
   overflow-y: auto;
   max-height: 88vh;
   background: #090c14 !important;
+}
+
+.mm-main-col::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mm-main-col::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mm-main-col::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+.mm-main-col::-webkit-scrollbar-thumb:hover {
+  background: rgba(29, 220, 168, 0.4);
 }
 
 .mm-header-info {

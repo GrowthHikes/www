@@ -65,39 +65,48 @@ export default function Navbar({ onOpenBooking }) {
 
           {/* Desktop Nav Links */}
           <div className="nav-links">
-            <Link to="/" className={isActive('/') ? 'active' : ''}>Home</Link>
-            <Link to="/about" className={isActive('/about') ? 'active' : ''}>About</Link>
+            <Link to="/" className={isActive('/') ? 'active' : ''} onMouseEnter={() => setIsMegaMenuOpen(false)}>Home</Link>
+            <Link to="/about" className={isActive('/about') ? 'active' : ''} onMouseEnter={() => setIsMegaMenuOpen(false)}>About</Link>
             
             {/* Services with MegaMenu */}
             <button
-              className={`nav-services-btn ${isMegaMenuOpen || location.pathname.startsWith('/services') ? 'active' : ''}`}
+              className={`nav-services-btn ${isMegaMenuOpen && megaMenuCategory === 'all' ? 'active' : (location.pathname.startsWith('/services') ? 'active' : '')}`}
               onClick={() => {
-                setMegaMenuCategory('all');
-                setIsMegaMenuOpen(!isMegaMenuOpen);
+                if (isMegaMenuOpen && megaMenuCategory === 'all') {
+                  setIsMegaMenuOpen(false);
+                } else {
+                  setMegaMenuCategory('all');
+                  setIsMegaMenuOpen(true);
+                }
               }}
               onMouseEnter={() => {
                 setMegaMenuCategory('all');
                 setIsMegaMenuOpen(true);
               }}
-              aria-expanded={isMegaMenuOpen}
+              aria-expanded={isMegaMenuOpen && megaMenuCategory === 'all'}
             >
               <span>Services</span>
-              <ChevronDown className={`nav-services-arrow ${isMegaMenuOpen ? 'nav-arrow-open' : ''}`} size={14} />
+              <ChevronDown className={`nav-services-arrow ${isMegaMenuOpen && megaMenuCategory === 'all' ? 'nav-arrow-open' : ''}`} size={14} />
             </button>
 
+            {/* AI Solutions with MegaMenu */}
             <Link 
               to="/solutions" 
-              className={isActive('/solutions') || isActive('/ai-solutions') ? 'active' : ''}
+              className={`nav-services-btn ${isMegaMenuOpen && megaMenuCategory === 'ai' ? 'active' : (isActive('/solutions') || isActive('/ai-solutions') ? 'active' : '')}`}
+              style={{ textDecoration: 'none' }}
+              onClick={() => setIsMegaMenuOpen(false)}
               onMouseEnter={() => {
                 setMegaMenuCategory('ai');
                 setIsMegaMenuOpen(true);
               }}
             >
-              AI Solutions
+              <span>AI Solutions</span>
+              <ChevronDown className={`nav-services-arrow ${isMegaMenuOpen && megaMenuCategory === 'ai' ? 'nav-arrow-open' : ''}`} size={14} />
             </Link>
-            <Link to="/technologies" className={isActive('/technologies') ? 'active' : ''}>Technologies</Link>
-            <Link to="/blog" className={isActive('/blog') ? 'active' : ''}>Blog</Link>
-            <Link to="/contact" className={isActive('/contact') ? 'active' : ''}>Contact</Link>
+
+            <Link to="/technologies" className={isActive('/technologies') ? 'active' : ''} onMouseEnter={() => setIsMegaMenuOpen(false)}>Technologies</Link>
+            <Link to="/blog" className={isActive('/blog') ? 'active' : ''} onMouseEnter={() => setIsMegaMenuOpen(false)}>Blog</Link>
+            <Link to="/contact" className={isActive('/contact') ? 'active' : ''} onMouseEnter={() => setIsMegaMenuOpen(false)}>Contact</Link>
           </div>
 
           {/* Right Section: Dual-Country Phone Pill & CTA */}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useNavigate } from 'react-router-dom';
 import { X, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
 import { SERVICES_CATEGORIES, SERVICES_DATA } from '../data/servicesData';
@@ -41,6 +42,7 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking, defaultCatego
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
+  if (typeof document === 'undefined') return null;
 
   const filteredServices = activeCategory === 'all'
     ? SERVICES_DATA
@@ -51,7 +53,7 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking, defaultCatego
     navigate(`/services/${slug}`);
   };
 
-  return (
+  return createPortal(
     <div
       className="mm-overlay"
       onClick={onClose}
@@ -67,33 +69,45 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking, defaultCatego
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: '#030407',
-        backdropFilter: 'blur(24px)',
-        WebkitBackdropFilter: 'blur(24px)',
-        zIndex: 99999,
+        backgroundColor: 'rgba(3, 4, 7, 0.84)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        zIndex: 100000,
+        pointerEvents: 'auto',
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        padding: '75px 20px 20px 20px',
+        padding: '76px 20px 20px 20px',
       }}
     >
       <div
         className="mm-panel"
         onClick={(e) => e.stopPropagation()}
-        onMouseLeave={onClose}
         style={{
           position: 'relative',
           width: '100%',
           maxWidth: '1200px',
-          maxHeight: 'calc(100vh - 95px)',
+          maxHeight: 'calc(100vh - 96px)',
           backgroundColor: '#090c14',
           border: '1px solid rgba(255, 255, 255, 0.12)',
           borderRadius: '24px',
           boxShadow: '0 30px 90px rgba(0, 0, 0, 0.95), 0 0 40px rgba(29, 220, 168, 0.12)',
           display: 'flex',
           overflow: 'hidden',
+          pointerEvents: 'auto',
         }}
       >
+        {/* Invisible bridge connecting header to panel */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-24px',
+            left: 0,
+            right: 0,
+            height: '24px',
+            pointerEvents: 'auto',
+          }}
+        />
         {/* Close Button Top Right */}
         <button
           className="mm-close-btn-prime"
@@ -198,7 +212,7 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking, defaultCatego
               }}
             >
               <Sparkles size={14} color="#1ddca8" />
-              <span>END-TO-END GROWTH &amp; ENGINEERING</span>
+              <span>{activeCategory === 'ai' ? 'AUTONOMOUS AGENTS & META APIS' : 'END-TO-END GROWTH & ENGINEERING'}</span>
             </span>
             <h2
               style={{
@@ -209,7 +223,7 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking, defaultCatego
                 fontFamily: 'var(--font-display)',
               }}
             >
-              Explore Our Capabilities
+              {activeCategory === 'ai' ? 'AI Solutions & Neural Automation' : 'Explore Our Capabilities'}
             </h2>
           </div>
 
@@ -527,6 +541,7 @@ export default function MegaMenu({ isOpen, onClose, onOpenBooking, defaultCatego
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
