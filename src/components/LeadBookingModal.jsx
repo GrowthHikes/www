@@ -213,27 +213,51 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <a
-                href={generateWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  padding: '14px 24px',
-                  borderRadius: '12px',
-                  background: '#25D366',
-                  color: '#ffffff',
-                  fontWeight: 700,
-                  fontSize: '0.95rem',
-                  textDecoration: 'none',
-                }}
-              >
-                <MessageSquare size={18} />
-                <span>Continue on WhatsApp (+91 97080 01001)</span>
-              </a>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <a
+                  href={generateWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    padding: '14px 24px',
+                    borderRadius: '12px',
+                    background: '#25D366',
+                    color: '#ffffff',
+                    fontWeight: 700,
+                    fontSize: '0.95rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <MessageSquare size={18} />
+                  <span>WhatsApp Technical Support (Sahil: +91 96252 13480)</span>
+                </a>
+
+                <a
+                  href={`https://wa.me/917206751515?text=${encodeURIComponent(`Hello Vinay! I'm interested in marketing/reels services: ${formData.name} (${formData.phone})`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    padding: '14px 24px',
+                    borderRadius: '12px',
+                    background: '#fb7185',
+                    color: '#ffffff',
+                    fontWeight: 700,
+                    fontSize: '0.95rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <MessageSquare size={18} />
+                  <span>WhatsApp Marketing & Reels (Vinay: +91 72067 51515)</span>
+                </a>
+              </div>
 
               <button
                 onClick={onClose}
@@ -331,7 +355,7 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
                     type="tel"
                     required
                     name="phone"
-                    placeholder="+91 97080 01001"
+                    placeholder="+91 96252 13480"
                     value={formData.phone}
                     onChange={handleChange}
                     style={{

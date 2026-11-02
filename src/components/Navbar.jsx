@@ -5,8 +5,9 @@ import MegaMenu from './MegaMenu';
 import Logo from './Logo';
 
 const PHONE_NUMBERS = [
-  { code: 'IN', label: 'India', display: '+91 97080 01001', href: 'tel:+919708001001' },
-  { code: 'US', label: 'USA', display: '+1 (917) 735-9752', href: 'tel:+19177359752' }
+  { code: 'TECH', label: 'Tech Support (Sahil)', display: '+91 96252 13480', href: 'tel:+919625213480' },
+  { code: 'MKTG', label: 'Marketing/Content (Vinay)', display: '+91 72067 51515', href: 'tel:+917206751515' },
+  { code: 'US', label: 'North America Desk', display: '+1 (917) 735-9752', href: 'tel:+19177359752' }
 ];
 
 export default function Navbar({ onOpenBooking }) {

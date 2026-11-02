@@ -144,6 +144,116 @@ export default function ServiceDetail({ onOpenBooking }) {
         </div>
       </section>
 
+      {/* Package Tier Options if Available */}
+      {service.packages && (
+        <section style={{ padding: '60px 0 20px 0' }}>
+          <div className="container" style={{ maxWidth: '960px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+              <span style={{ fontSize: '0.8rem', color: '#00c896', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
+                Transparent Packages
+              </span>
+              <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#fff', marginTop: '6px' }}>
+                Select Your Social Media Marketing Tier
+              </h2>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '24px',
+            }}>
+              {service.packages.map((pkg, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: pkg.popular ? 'rgba(0, 200, 150, 0.08)' : 'rgba(18, 20, 30, 0.85)',
+                    border: pkg.popular ? '2px solid #00c896' : '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: '20px',
+                    padding: '30px',
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  {pkg.badge && (
+                    <span style={{
+                      position: 'absolute',
+                      top: '-12px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      background: '#00c896',
+                      color: '#05070a',
+                      fontSize: '0.75rem',
+                      fontWeight: 800,
+                      padding: '4px 14px',
+                      borderRadius: '999px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                    }}>
+                      ★ {pkg.badge}
+                    </span>
+                  )}
+
+                  <div>
+                    <span style={{ fontSize: '0.85rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>
+                      {pkg.tier}
+                    </span>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', margin: '6px 0 16px 0' }}>
+                      {pkg.name}
+                    </h3>
+                    <div style={{ fontSize: '2.2rem', fontWeight: 900, color: '#00c896', marginBottom: '20px' }}>
+                      {pkg.priceINR}
+                    </div>
+
+                    <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+                      {pkg.items.map((it, i) => (
+                        <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e2e8f0', fontSize: '0.9rem' }}>
+                          <CheckCircle2 size={16} color="#00c896" style={{ flexShrink: 0 }} />
+                          <span>{it}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => onOpenBooking ? onOpenBooking({ selectedServices: [service.id], note: `Selected Tier: ${pkg.name} (${pkg.priceINR})` }) : null}
+                    className="btn-primary"
+                    style={{ width: '100%', padding: '12px', textAlign: 'center', justifyContent: 'center' }}
+                  >
+                    Select {pkg.tier}
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Inclusions summary banner */}
+            <div style={{
+              marginTop: '30px',
+              padding: '20px 24px',
+              borderRadius: '14px',
+              background: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '16px',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '0.88rem',
+              color: '#94a3b8',
+            }}>
+              <strong style={{ color: '#fff' }}>All Packages Include:</strong>
+              <span>✓ Video Editing</span>
+              <span>✓ Monthly Reports</span>
+              <span>✓ Video Shooting</span>
+              <span>✓ Creative Script</span>
+              <span>✓ Brand Awareness</span>
+              <span>✓ Content Research</span>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Deliverables & Deep Scope */}
       <section style={{ padding: '60px 0' }}>
         <div className="container" style={{ maxWidth: '960px' }}>

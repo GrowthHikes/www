@@ -14,22 +14,28 @@ export default function QuotationCalculator({ onBookWithQuote }) {
     );
   };
 
-  // Base pricing for all 14 services (in USD and INR)
+  // Base pricing for all services (in USD and INR)
   const servicePriceMap = {
     'drone-shooting': { usd: 350, inr: 14999 },
     'hyperlocal-seo': { usd: 250, inr: 9999 },
-    'instagram-meta-management': { usd: 450, inr: 17999 },
+    'instagram-meta-management': { usd: 250, inr: 20000 },
     'paid-ads': { usd: 500, inr: 19999 },
     'ugc-creators': { usd: 300, inr: 12999 },
     'email-marketing': { usd: 300, inr: 11999 },
-    'web-development': { usd: 600, inr: 24999 },
-    'mobile-apps': { usd: 900, inr: 34999 },
+    'web-development': { usd: 300, inr: 24999 },
+    'mobile-app-development': { usd: 999, inr: 79999 },
+    'mobile-apps': { usd: 999, inr: 79999 },
     'ai-support-agents': { usd: 400, inr: 16999 },
-    'ai-calling-agents': { usd: 550, inr: 22999 },
+    'ai-calling-agents': { usd: 300, inr: 24999 },
+    'whatsapp-bots': { usd: 300, inr: 24999 },
+    'whatsapp-api-bots': { usd: 300, inr: 24999 },
+    'chatbots': { usd: 300, inr: 24999 },
+    'technical-consultancy': { usd: 5, inr: 499 },
     'custom-software': { usd: 800, inr: 32999 },
-    'chatbots': { usd: 350, inr: 14999 },
-    'whatsapp-api-bots': { usd: 400, inr: 16999 },
     'ecommerce-coaching': { usd: 450, inr: 18999 },
+    'ecommerce-mentorship': { usd: 450, inr: 25000 },
+    'brand-ui-ux-design': { usd: 450, inr: 18999 },
+    'analytics-attribution': { usd: 450, inr: 16999 },
   };
 
   // Calculate Subtotals

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, MessageSquare, Instagram, ShieldCheck, CheckCircle2, Sparkles, Clock } from 'lucide-react';
-import { CONTACT_PHONE_IN, CONTACT_PHONE_US, INSTAGRAM_URL, INSTAGRAM_HANDLE, SERVICES_CATALOG } from '../data/servicesData';
+import { Phone, Mail, MapPin, Send, MessageSquare, Instagram, ShieldCheck, CheckCircle2, Sparkles, Clock, Wrench, Video } from 'lucide-react';
+import { CONTACT_TECH, CONTACT_MARKETING, CONTACT_PHONE_IN, CONTACT_PHONE_MARKETING, CONTACT_PHONE_US, INSTAGRAM_URL, INSTAGRAM_HANDLE, SERVICES_CATALOG } from '../data/servicesData';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -132,10 +132,10 @@ export default function Contact() {
           }}>
             {/* Direct Hotlines & Location Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              {/* India Hotline */}
+              {/* Technical Support & Architecture Hotline - Sahil Rathee */}
               <div style={{
                 background: 'rgba(18, 20, 30, 0.85)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                border: '1px solid rgba(0, 200, 150, 0.25)',
                 borderRadius: '20px',
                 padding: '28px',
                 position: 'relative',
@@ -151,32 +151,85 @@ export default function Contact() {
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}>
-                    <Phone size={20} />
+                    <Wrench size={20} />
                   </div>
                   <div>
-                    <span style={{ fontSize: '0.8rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.04em' }}>India Operations & Production</span>
-                    <h3 style={{ color: '#fff', fontSize: '1.25rem', fontWeight: 800 }}>{CONTACT_PHONE_IN}</h3>
+                    <span style={{ fontSize: '0.8rem', color: '#00c896', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 700 }}>
+                      Technical Support & Architecture · {CONTACT_TECH.name}
+                    </span>
+                    <h3 style={{ color: '#fff', fontSize: '1.25rem', fontWeight: 800 }}>{CONTACT_TECH.phone}</h3>
                   </div>
                 </div>
                 <p style={{ color: '#94a3b8', fontSize: '0.88rem', lineHeight: 1.6, marginBottom: '16px' }}>
-                  Direct line to our flight planning desk, drone logistics, local SEO teams, and domestic client managers.
+                  Direct line for software architecture, Kubernetes, self-hosted infra, AWS/GCP/Azure, mobile apps, voice bots, and ₹499 ($5) technical consultancy sessions.
                 </p>
                 <div style={{ display: 'flex', gap: '10px' }}>
                   <a
-                    href={`tel:${CONTACT_PHONE_IN.replace(/\s+/g, '')}`}
+                    href={`tel:${CONTACT_TECH.rawPhone}`}
                     className="btn-primary"
                     style={{ padding: '8px 18px', fontSize: '0.85rem', textDecoration: 'none' }}
                   >
-                    Call Now
+                    Call Sahil
                   </a>
                   <a
-                    href={`https://wa.me/${CONTACT_PHONE_IN.replace(/\D/g, '')}?text=Hi%20GrowthHikes%20Team%2C%20I%20would%20like%20to%20discuss%20a%20project`}
+                    href={`https://wa.me/${CONTACT_TECH.rawPhone}?text=Hi%20Sahil%2C%20I%20would%20like%20to%20discuss%20a%20technical%20project%2Fconsultation`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary"
                     style={{ padding: '8px 18px', fontSize: '0.85rem', textDecoration: 'none' }}
                   >
-                    WhatsApp Chat
+                    WhatsApp (Tech)
+                  </a>
+                </div>
+              </div>
+
+              {/* Marketing, Content & Reels - Vinay */}
+              <div style={{
+                background: 'rgba(18, 20, 30, 0.85)',
+                border: '1px solid rgba(251, 113, 133, 0.25)',
+                borderRadius: '20px',
+                padding: '28px',
+                position: 'relative',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
+                  <div style={{
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: '10px',
+                    background: 'rgba(251, 113, 133, 0.15)',
+                    color: '#fb7185',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    <Video size={20} />
+                  </div>
+                  <div>
+                    <span style={{ fontSize: '0.8rem', color: '#fb7185', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 700 }}>
+                      Marketing, Content & Reels · {CONTACT_MARKETING.name}
+                    </span>
+                    <h3 style={{ color: '#fff', fontSize: '1.25rem', fontWeight: 800 }}>{CONTACT_MARKETING.phone}</h3>
+                  </div>
+                </div>
+                <p style={{ color: '#94a3b8', fontSize: '0.88rem', lineHeight: 1.6, marginBottom: '16px' }}>
+                  Direct line for Instagram Reels starting at 20k (Basic ₹20k, Popular ₹30k, Premium ₹50k), drone shoots, video production, and social media marketing.
+                </p>
+                <div style={{ display: 'flex', gap: '10px' }}>
+                  <a
+                    href={`tel:${CONTACT_MARKETING.rawPhone}`}
+                    className="btn-primary"
+                    style={{ padding: '8px 18px', fontSize: '0.85rem', textDecoration: 'none', background: '#fb7185' }}
+                  >
+                    Call Vinay
+                  </a>
+                  <a
+                    href={`https://wa.me/${CONTACT_MARKETING.rawPhone}?text=Hi%20Vinay%2C%20I%20would%20like%20to%20discuss%20Reels%20and%20social%20media%20packages`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                    style={{ padding: '8px 18px', fontSize: '0.85rem', textDecoration: 'none' }}
+                  >
+                    WhatsApp (Marketing)
                   </a>
                 </div>
               </div>
@@ -285,7 +338,7 @@ export default function Contact() {
                   <p style={{ color: '#94a3b8', fontSize: '1rem', lineHeight: 1.6, marginBottom: '24px' }}>
                     Thank you, <strong>{formData.name}</strong>. A GrowthHikes technical director will review your project scope and contact you at <strong>{formData.phone || formData.email}</strong> shortly.
                   </p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '16px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', marginBottom: '16px' }}>
                     <a
                       href={getWhatsAppMessageUrl()}
                       target="_blank"
@@ -305,7 +358,29 @@ export default function Contact() {
                       }}
                     >
                       <MessageSquare size={18} />
-                      <span>Continue on WhatsApp (+91 97080 01001)</span>
+                      <span>Chat with Technical Support (Sahil: +91 96252 13480)</span>
+                    </a>
+
+                    <a
+                      href={`https://wa.me/917206751515?text=${encodeURIComponent(`Hello Vinay! I submitted an inquiry on GrowthHikes for marketing/content: ${formData.name} (${formData.phone})`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        padding: '14px 24px',
+                        borderRadius: '12px',
+                        background: '#fb7185',
+                        color: '#ffffff',
+                        fontWeight: 700,
+                        fontSize: '0.95rem',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <MessageSquare size={18} />
+                      <span>Chat with Marketing & Content (Vinay: +91 72067 51515)</span>
                     </a>
                   </div>
                   <button
@@ -376,7 +451,7 @@ export default function Contact() {
                       <input
                         type="tel"
                         required
-                        placeholder="+91 97080 01001"
+                        placeholder="+91 96252 13480"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         style={{

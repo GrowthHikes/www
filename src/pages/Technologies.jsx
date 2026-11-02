@@ -104,10 +104,10 @@ export default function Technologies({ onOpenBooking }) {
             }}>
               <Server size={24} color="#6366f1" style={{ marginBottom: '14px' }} />
               <h3 style={{ color: '#fff', fontSize: '1.2rem', fontWeight: 700, marginBottom: '8px' }}>
-                Event-Driven Cloud Backends
+                Kubernetes, Self-Hosted & Multi-Cloud
               </h3>
               <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                Serverless and containerized microservices on AWS and Google Cloud with automatic autoscaling, Redis caching, and 99.99% service level agreements.
+                Our team is well-versed in Kubernetes container orchestration, sovereign self-hosted infrastructure, and enterprise cloud deployments across AWS, GCP, and Azure with 99.99% uptime guarantees.
               </p>
             </div>
 

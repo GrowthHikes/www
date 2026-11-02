@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Rocket, ShieldCheck, Instagram, Phone, Mail, ArrowUpRight, Sparkles, MapPin, Globe } from 'lucide-react';
-import { INSTAGRAM_URL, INSTAGRAM_HANDLE, CONTACT_PHONE_IN, CONTACT_PHONE_US } from '../data/servicesData';
+import { INSTAGRAM_URL, INSTAGRAM_HANDLE, CONTACT_PHONE_IN, CONTACT_PHONE_MARKETING, CONTACT_PHONE_US } from '../data/servicesData';
 import Logo from './Logo';
 
 export default function Footer({ onOpenBooking }) {
@@ -152,9 +152,25 @@ export default function Footer({ onOpenBooking }) {
                 fontSize: '0.9rem',
               }}
             >
-              <span style={{ fontSize: '1.1rem' }}>🇮🇳</span>
-              <strong>India:</strong>
+              <span style={{ fontSize: '1.1rem' }}>⚡</span>
+              <strong>Tech Support (Sahil):</strong>
               <span style={{ color: '#2cc295' }}>{CONTACT_PHONE_IN}</span>
+            </a>
+
+            <a
+              href={`tel:${CONTACT_PHONE_MARKETING.replace(/\s+/g, '')}`}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                color: '#cbd5e1',
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+              }}
+            >
+              <span style={{ fontSize: '1.1rem' }}>🎬</span>
+              <strong>Marketing & Reels (Vinay):</strong>
+              <span style={{ color: '#fb7185' }}>{CONTACT_PHONE_MARKETING}</span>
             </a>
 
             <a
@@ -169,7 +185,7 @@ export default function Footer({ onOpenBooking }) {
               }}
             >
               <span style={{ fontSize: '1.1rem' }}>🇺🇸</span>
-              <strong>USA:</strong>
+              <strong>USA Desk:</strong>
               <span style={{ color: '#2cc295' }}>{CONTACT_PHONE_US}</span>
             </a>
 

@@ -14,6 +14,24 @@ export const TECHNOLOGIES_LIST = [
     description: 'High-performance cross-platform mobile apps for iOS and Android with native feel.'
   },
   {
+    id: 'kubernetes',
+    name: 'Kubernetes',
+    category: 'cloud',
+    color: '#326ce5',
+    bgTint: 'rgba(50, 108, 229, 0.08)',
+    borderTint: 'rgba(50, 108, 229, 0.25)',
+    description: 'Production-grade container orchestration, automated rollouts, Helm charts, and cluster resilience.'
+  },
+  {
+    id: 'self-hosted',
+    name: 'Self-Hosted',
+    category: 'cloud',
+    color: '#10b981',
+    bgTint: 'rgba(16, 185, 129, 0.08)',
+    borderTint: 'rgba(16, 185, 129, 0.25)',
+    description: 'Independent bare-metal Linux servers, Docker Swarm, sovereign data persistence, and zero vendor lock-in.'
+  },
+  {
     id: 'aws',
     name: 'AWS',
     category: 'cloud',
@@ -24,12 +42,21 @@ export const TECHNOLOGIES_LIST = [
   },
   {
     id: 'google-cloud',
-    name: 'Google Cloud',
+    name: 'Google Cloud (GCP)',
     category: 'cloud',
     color: '#4285f4',
     bgTint: 'rgba(66, 133, 244, 0.08)',
     borderTint: 'rgba(66, 133, 244, 0.25)',
-    description: 'Robust cloud computing, Vertex AI models, global CDN, and scalable Kubernetes.'
+    description: 'Robust cloud computing, Vertex AI models, global CDN, and scalable GKE Kubernetes.'
+  },
+  {
+    id: 'azure',
+    name: 'Microsoft Azure',
+    category: 'cloud',
+    color: '#0089d6',
+    bgTint: 'rgba(0, 137, 214, 0.08)',
+    borderTint: 'rgba(0, 137, 214, 0.25)',
+    description: 'Enterprise Microsoft Azure cloud architecture, AKS container clusters, and hybrid networking.'
   },
   {
     id: 'figma',

@@ -1,8 +1,98 @@
-export const CONTACT_PHONE_IN = '+91 97080 01001';
+export const CONTACT_TECH = {
+  name: 'Sahil Rathee',
+  role: 'Technical Lead & Systems Architect',
+  phone: '+91 96252 13480',
+  rawPhone: '919625213480',
+  email: 'sahil.artits.rathee@gmail.com',
+  whatsapp: 'https://wa.me/919625213480',
+};
+
+export const CONTACT_MARKETING = {
+  name: 'Vinay',
+  role: 'Growth, Marketing & Content Strategy',
+  phone: '+91 72067 51515',
+  rawPhone: '917206751515',
+  whatsapp: 'https://wa.me/917206751515',
+};
+
+export const CONTACT_PHONE_IN = '+91 96252 13480';
+export const CONTACT_PHONE_MARKETING = '+91 72067 51515';
 export const CONTACT_PHONE_US = '+1 (917) 735-9752';
-export const WHATSAPP_LINK = 'https://wa.me/919708001001';
+export const WHATSAPP_LINK = 'https://wa.me/919625213480';
+export const WHATSAPP_LINK_MARKETING = 'https://wa.me/917206751515';
 export const INSTAGRAM_HANDLE = '@growth_hikes';
 export const INSTAGRAM_URL = 'https://www.instagram.com/growth_hikes';
+
+export const SOCIAL_MEDIA_PACKAGES = [
+  {
+    tier: 'Basic',
+    name: 'Basic Social Media Marketing',
+    price: '20,000/-',
+    priceINR: '₹20,000',
+    popular: false,
+    items: [
+      '6 Videos (Basic Shot)',
+      '6 Instagram Stories',
+      '3 Overview Posts',
+      '3 Posters'
+    ],
+    inclusions: [
+      'Video Editing',
+      'Monthly Reports',
+      'Video Shooting',
+      'Creative Script',
+      'Brand Awareness',
+      'Video Script (Content Research)'
+    ]
+  },
+  {
+    tier: 'Most Popular',
+    name: 'Growth Social Media Marketing',
+    price: '30,000/-',
+    priceINR: '₹30,000',
+    popular: true,
+    badge: 'Most Popular',
+    items: [
+      '10 Videos (Gimbal Shot)',
+      '10 Instagram Stories',
+      '3 Ads',
+      '5 Overview Posts',
+      '5 Posters'
+    ],
+    inclusions: [
+      'Video Editing',
+      'Monthly Reports',
+      'Video Shooting',
+      'Creative Script',
+      'Brand Awareness',
+      'Video Script (Content Research)'
+    ]
+  },
+  {
+    tier: 'Premium',
+    name: 'Premium Social Media & Production',
+    price: '50,000/-',
+    priceINR: '₹50,000',
+    popular: false,
+    badge: 'Premium Enterprise',
+    items: [
+      '15 Videos (Professional Camera & Drone Shoot)',
+      '15 Instagram Stories (Business Clips)',
+      '6 Ads',
+      '10 Feed Posts',
+      '10 Posters',
+      'Website Included'
+    ],
+    inclusions: [
+      'Video Editing',
+      'Monthly Reports',
+      'Video Shooting',
+      'Creative Script',
+      'Brand Awareness',
+      'Video Script (Content Research)'
+    ]
+  }
+];
 
 export const SERVICES_CATEGORIES = [
   { id: 'all', name: 'All Capabilities' },
@@ -86,31 +176,32 @@ export const SERVICES_DATA = [
     slug: 'instagram-meta-growth',
     category: 'growth',
     categoryLabel: 'Growth & Paid Media',
-    name: 'Instagram & Meta Growth (Reels-First)',
-    title: 'Instagram & Meta Growth (Reels-First)',
+    name: 'Instagram Reels & Social Media Marketing',
+    title: 'Instagram Reels & Social Media Marketing',
     icon: 'Instagram',
-    tagline: 'Transform casual scrollers into engaged followers and booked clients.',
-    shortDesc: 'End-to-end short-form vertical video production, feed curation, trend-jacking, community response, and DM lead funnels.',
-    description: 'End-to-end short-form vertical video production, feed curation, trend-jacking, community response, and DM lead funnels.',
-    priceStarts: '₹17,999/mo',
-    startingPrice: '₹17,999/mo',
-    priceFrom: '$500/mo',
-    priceINR: '₹17,999/mo',
+    tagline: 'Transform casual scrollers into engaged followers and booked clients with high-retention video.',
+    shortDesc: 'End-to-end short-form vertical video production, professional shooting, feed curation, trend research, and DM lead funnels.',
+    description: 'End-to-end short-form vertical video production, professional shooting, feed curation, trend research, and DM lead funnels.',
+    priceStarts: '₹20,000/mo',
+    startingPrice: '₹20,000/mo',
+    priceFrom: '$250/mo',
+    priceINR: '₹20,000/mo',
     timeline: 'Monthly Retainer',
     turnaround: 'Monthly Retainer',
     type: 'Monthly Retainer',
-    metric: '15-30 Reels/mo • Viral Hooks',
-    metrics: ['15 - 30 Reels / Mo', '24/7 DM Automation', 'Viral Hook Formats'],
+    metric: 'Starting ₹20k • 6-15 Reels/mo',
+    metrics: ['Packages from ₹20,000', 'Basic, Popular & Premium', 'Full Shooting & Scripting Included'],
+    packages: SOCIAL_MEDIA_PACKAGES,
     deliverables: [
-      'Scripted, recorded, edited, and posted vertical Reels',
-      'High-converting carousel slides and visual grid architecture',
-      'Automated ManyChat / WhatsApp DM lead qualification triggers',
-      'Active community management, comments, and story sequences'
+      'Scripted, recorded, edited, and posted vertical Reels (6 to 15 shoots/mo)',
+      'High-converting carousel slides, overview posts, and visual grid architecture',
+      'Automated Meta / WhatsApp DM lead qualification triggers',
+      'Creative scriptwriting, content research, and monthly analytics reporting'
     ],
     features: [
-      'Viral hook testing framework (first 3-second retention)',
-      'Subtitles, motion graphics, and sound design included',
-      'Collaborator post outreach to creators in your niche',
+      'Gimbal shots, professional camera & drone shoots available',
+      'Full video editing, sound design, and motion subtitles included',
+      'Brand awareness amplification and hashtag strategy',
       'Monthly performance audit and strategy refinement'
     ]
   },
@@ -218,31 +309,31 @@ export const SERVICES_DATA = [
     slug: 'custom-web-platforms',
     category: 'software',
     categoryLabel: 'Software & App Engineering',
-    name: 'Custom Next.js & React Web Platforms',
-    title: 'Custom Next.js & React Web Platforms',
+    name: 'WordPress Websites & Custom Next.js Platforms',
+    title: 'WordPress Websites & Custom Next.js Platforms',
     icon: 'Globe',
-    tagline: 'Sub-second page loads, 95+ Core Web Vitals, and enterprise security.',
-    shortDesc: 'Custom high-performance websites and web applications built with Next.js 15, React, Vite, and Tailwind CSS.',
-    description: 'Custom high-performance websites and web applications built with Next.js 15, React, Vite, and Tailwind CSS.',
+    tagline: 'WordPress websites starting at ₹24,999 or ultra-fast Next.js apps with 95+ Core Web Vitals.',
+    shortDesc: 'Production-ready WordPress business websites and custom Next.js 15 web applications built for speed, SEO, and conversions.',
+    description: 'We deliver polished WordPress websites starting at ₹24,999 and custom Next.js full-stack web platforms hosted on global edge networks with sub-second page loads.',
     priceStarts: '₹24,999',
     startingPrice: '₹24,999',
-    priceFrom: '$600',
+    priceFrom: '$300',
     priceINR: '₹24,999',
     timeline: '1 - 3 Weeks',
     turnaround: '1 - 3 Weeks',
     type: 'Project Sprint',
     metric: '99+ Lighthouse Score',
-    metrics: ['99+ Lighthouse Score', '<800ms LCP', '100% SEO Ready'],
+    metrics: ['WordPress from ₹24,999', 'Next.js 15 & Vite', '<800ms LCP & 100% SEO'],
     deliverables: [
-      'Fully custom responsive design (Figma to pixel-perfect code)',
+      'Full WordPress website or custom Next.js responsive platform',
       'SSR/SSG architecture hosted on Cloudflare Edge global CDN',
-      'CMS integration (Sanity, Strapi, or Headless WordPress)',
+      'CMS integration (WordPress, WooCommerce, Sanity, or Strapi)',
       'Built-in analytics, GA4, Meta CAPI, and schema markup'
     ],
     features: [
-      'Zero-CLS layout stability and responsive fluid grids',
-      'Interactive Framer Motion luxury micro-animations',
-      'End-to-end type safety with TypeScript & Tailwind CSS',
+      'Zero-CLS layout stability and mobile-first responsive fluid grids',
+      'Interactive micro-animations and conversion-optimized CTAs',
+      'End-to-end type safety, SEO meta tags, and SSL security',
       'Automated CI/CD deployment pipelines'
     ]
   },
@@ -254,18 +345,18 @@ export const SERVICES_DATA = [
     name: 'Cross-Platform Mobile Apps (React Native & Flutter)',
     title: 'Cross-Platform Mobile Apps (React Native & Flutter)',
     icon: 'Smartphone',
-    tagline: 'Native performance on both platforms from a unified, maintainable codebase.',
+    tagline: 'Native performance on iOS and Android from a unified, maintainable codebase.',
     shortDesc: 'High-speed mobile applications built with Flutter and React Native with offline sync, push notifications, and biometric auth.',
     description: 'High-speed mobile applications built with Flutter and React Native with offline sync, push notifications, and biometric auth.',
-    priceStarts: '₹44,999',
-    startingPrice: '₹44,999',
-    priceFrom: '$1,200',
-    priceINR: '₹44,999',
+    priceStarts: '₹79,999',
+    startingPrice: '₹79,999',
+    priceFrom: '$999',
+    priceINR: '₹79,999',
     timeline: '3 - 6 Weeks',
     turnaround: '3 - 6 Weeks',
     type: 'Project Sprint',
     metric: '60 FPS Native Performance',
-    metrics: ['60 FPS Native Performance', 'iOS & Android Ready', 'Play/App Store Approved'],
+    metrics: ['₹79,999 Full Package', 'iOS & Android Ready', 'Play & App Store Submission'],
     deliverables: [
       'Production-ready APK, AAB, and iOS IPA builds',
       'App Store & Google Play Store submission and review compliance',
@@ -284,30 +375,30 @@ export const SERVICES_DATA = [
     slug: 'whatsapp-cloud-api-bots',
     category: 'ai',
     categoryLabel: 'AI & Automation',
-    name: 'WhatsApp Cloud API Bots & Commerce',
-    title: 'WhatsApp Cloud API Bots & Commerce',
+    name: 'Meta Omnichannel Chatbots (Instagram & WhatsApp)',
+    title: 'Meta Omnichannel Chatbots (Instagram & WhatsApp)',
     icon: 'MessageSquare',
-    tagline: 'Sell products, quote services, and confirm bookings inside WhatsApp.',
-    shortDesc: 'Official Meta WhatsApp Business Cloud API integration with automated catalogs, quick-reply menus, and instant PDF quote generation.',
-    description: 'Official Meta WhatsApp Business Cloud API integration with automated catalogs, quick-reply menus, and instant PDF quote generation.',
-    priceStarts: '₹14,999',
-    startingPrice: '₹14,999',
-    priceFrom: '$400',
-    priceINR: '₹14,999',
+    tagline: 'Automate inquiries, bookings, and commerce across Instagram DMs and WhatsApp.',
+    shortDesc: 'Official Meta chatbot solution covering WhatsApp Business Cloud API and Instagram Direct automation with instant replies and CRM syncing.',
+    description: 'Unified Meta chatbot solution covering WhatsApp Business Cloud API and Instagram Direct automation with automated catalogs, quick-reply menus, and instant PDF quote generation.',
+    priceStarts: '₹24,999',
+    startingPrice: '₹24,999',
+    priceFrom: '$300',
+    priceINR: '₹24,999',
     timeline: '1 - 2 Weeks',
     turnaround: '1 - 2 Weeks',
     type: 'Setup + Retainer',
-    metric: '98% Open Rate • Meta Official',
-    metrics: ['98% Open Rate', 'Instant Quote PDF', 'Official Meta API'],
+    metric: 'Meta Omnichannel • 98% Open Rate',
+    metrics: ['Instagram & WhatsApp Unified', 'Instant Quote PDF', 'Official Meta API Verified'],
     deliverables: [
-      'Green tick verified Meta WhatsApp Business Cloud setup',
+      'Official Meta WhatsApp Business Cloud & Instagram DM API integration',
       'Interactive button menus, list pickers, and product catalogs',
       'Dynamic PDF quotation generator sent instantly in chat',
       'Automated order and appointment confirmation notifications'
     ],
     features: [
       'Multi-agent shared inbox for human support staff',
-      'Automated abandoned lead follow-up sequences',
+      'Automated abandoned lead follow-up sequences across IG & WA',
       'Webhook integration with Shopify, WooCommerce, and CRMs',
       'Zero risk of number bans using official Cloud API'
     ]
@@ -350,24 +441,25 @@ export const SERVICES_DATA = [
     slug: 'autonomous-voice-calling-agents',
     category: 'ai',
     categoryLabel: 'AI & Automation',
-    name: 'Autonomous AI Voice Calling Agents',
-    title: 'Autonomous AI Voice Calling Agents',
+    name: 'Autonomous AI Voice Calling Agents (Concierge Included)',
+    title: 'Autonomous AI Voice Calling Agents (Concierge Included)',
     icon: 'PhoneCall',
-    tagline: 'Ultra-low latency human-like voice agents for inbound receptionist & 60-second lead call follow-ups',
-    shortDesc: 'Never let another lead go cold. Our autonomous AI voice agents dial inbound or outbound over standard telephone networks with fluid, natural pauses, answering questions and booking calendar slots.',
-    description: 'Never let another lead go cold. Our autonomous AI voice agents dial inbound or outbound over standard telephone networks with fluid, natural pauses, answering questions and booking calendar slots.',
-    priceStarts: '₹22,999',
-    startingPrice: '₹22,999',
-    priceFrom: '$550',
-    priceINR: '₹22,999',
+    tagline: 'Ultra-low latency human-like voice agents for inbound receptionist & 60s callbacks. Autonomous Support Concierge included as a subset!',
+    shortDesc: 'Never let another lead go cold. Low-latency AI voice agents over standard telephone lines, with 24/7 Autonomous Support Concierge included in the package.',
+    description: 'Never let another lead go cold. Our autonomous AI voice agents dial inbound or outbound over standard telephone networks with fluid, natural pauses, answering questions and booking calendar slots. Includes Autonomous Support Concierge as an integrated subset.',
+    priceStarts: '₹24,999',
+    startingPrice: '₹24,999',
+    priceFrom: '$300',
+    priceINR: '₹24,999',
     timeline: '2 - 3 Weeks',
     turnaround: '2 - 3 Weeks',
     type: 'Setup + Usage',
-    metric: '<600ms Voice Latency',
-    metrics: ['<600ms Voice Latency', 'English & Hindi Accents', 'Zero Lost Leads'],
+    metric: '<600ms Voice Latency • Concierge Included',
+    metrics: ['Support Concierge Included', '<600ms Latency', 'English & Hindi Accents'],
     deliverables: [
       '60-second automatic callback to newly captured leads',
       'Inbound front-desk telephone reception & call triage',
+      'Autonomous Support Concierge chatbot integrated as a core subset',
       'Twilio, Deepgram Whisper STT & ElevenLabs natural voice pipeline',
       'Automated call recording, transcription, and CRM sync'
     ],
@@ -376,6 +468,39 @@ export const SERVICES_DATA = [
       'Direct calendar booking via Google/Outlook links',
       'Live call transfer to human executives upon sentiment escalation',
       'Detailed call analytics and lead qualification scoring'
+    ]
+  },
+  {
+    id: 'technical-consultancy',
+    slug: 'technical-consultancy-architecture',
+    category: 'software',
+    categoryLabel: 'Software & App Engineering',
+    name: 'Technical Architecture & Plan Selection Consultancy',
+    title: 'Technical Architecture & Plan Selection Consultancy',
+    icon: 'Zap',
+    tagline: '1-on-1 direct session with Lead Architect Sahil Rathee for custom tech roadmaps and plan selection.',
+    shortDesc: 'Special fee of ₹499 / $5 for custom tech solution blueprinting, Kubernetes/cloud architecture advice, and right plan selection.',
+    description: 'Get 1-on-1 direct access to our systems architect. We analyze your tech requirements, infrastructure costs (AWS/GCP/Azure/Self-hosted), and prescribe the exact engineering and growth plan for your company.',
+    priceStarts: '₹499',
+    startingPrice: '₹499',
+    priceFrom: '$5',
+    priceINR: '₹499',
+    timeline: 'Same-Day / 24h',
+    turnaround: '24 Hours',
+    type: '1-on-1 Advisory Session',
+    metric: '₹499 / $5 Consultation',
+    metrics: ['Direct with Sahil Rathee', 'Custom Cloud Architecture', 'Kubernetes / Multi-Cloud Roadmap'],
+    deliverables: [
+      '1-on-1 30-minute direct technical architecture video/voice call',
+      'Written custom tech stack blueprint and cloud hosting estimate',
+      'Right plan selection across GrowthHikes engineering & marketing services',
+      'Immediate infrastructure diagnosis (AWS, GCP, Azure, Self-hosted)'
+    ],
+    features: [
+      'Led by Sahil Rathee (+91 96252 13480)',
+      'Actionable recommendations before committing to major builds',
+      'Full consultation fee credited back upon project kickoff',
+      'Fast turnaround within 24 hours of booking'
     ]
   },
   {
