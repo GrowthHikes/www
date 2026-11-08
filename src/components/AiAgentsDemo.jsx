@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { PhoneCall, Bot, Send, User, Sparkles, Volume2, ShieldCheck, PhoneOff, Mic, Play, MessageSquare } from 'lucide-react';
+import { PhoneCall, Bot, Send, User, Sparkles, Volume2, ShieldCheck, PhoneOff, Mic, Play, MessageSquare, ExternalLink, CheckCircle2, Radio } from 'lucide-react';
 import { CONTACT_PHONE_IN } from '../data/servicesData';
 
 export default function AiAgentsDemo() {
@@ -460,14 +460,14 @@ export default function AiAgentsDemo() {
             </div>
 
             {/* Action Buttons */}
-            <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '28px' }}>
               <button
                 onClick={toggleCallSimulation}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '10px',
-                  padding: '14px 28px',
+                  padding: '14px 24px',
                   borderRadius: '12px',
                   background: isCalling ? '#ef4444' : 'linear-gradient(135deg, #00c896, #059669)',
                   color: '#fff',
@@ -483,21 +483,116 @@ export default function AiAgentsDemo() {
               </button>
 
               <a
-                href={`tel:${CONTACT_PHONE_IN.replace(/\s+/g, '')}`}
-                className="btn-secondary"
+                href="https://growthhikes-voice-agent.onrender.com/test"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
                   padding: '14px 24px',
                   borderRadius: '12px',
+                  background: 'rgba(99, 102, 241, 0.15)',
+                  border: '1px solid #6366f1',
+                  color: '#ffffff',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  fontSize: '0.95rem',
+                }}
+              >
+                <Radio size={18} color="#818cf8" />
+                <span>Launch Live Voice Workbench</span>
+                <ExternalLink size={14} color="#818cf8" />
+              </a>
+
+              <a
+                href={`tel:${CONTACT_PHONE_IN.replace(/\s+/g, '')}`}
+                className="btn-secondary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '14px 22px',
+                  borderRadius: '12px',
                   textDecoration: 'none',
                   fontSize: '0.95rem',
                 }}
               >
                 <PhoneCall size={18} color="#00c896" />
-                <span>Call GrowthHikes Directly ({CONTACT_PHONE_IN})</span>
+                <span>Call Us Direct ({CONTACT_PHONE_IN})</span>
               </a>
+            </div>
+
+            {/* GSM Gateway & Meta Compliance Specs */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '12px',
+              paddingTop: '20px',
+              borderTop: '1px solid rgba(255, 255, 255, 0.08)'
+            }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                <CheckCircle2 size={16} color="#00c896" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <div>
+                  <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block' }}>&lt;800ms Cellular InCall Auto-Pickup</strong>
+                  <span style={{ color: '#94a3b8', fontSize: '0.78rem' }}>GSM Telecom gateway answers inbound leads instantly.</span>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                <CheckCircle2 size={16} color="#00c896" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <div>
+                  <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block' }}>Hardware DSP Noise Masking</strong>
+                  <span style={{ color: '#94a3b8', fontSize: '0.78rem' }}>Filters background street &amp; office noise for pure signal.</span>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                <CheckCircle2 size={16} color="#00c896" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <div>
+                  <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block' }}>Bilingual Hindi &amp; English</strong>
+                  <span style={{ color: '#94a3b8', fontSize: '0.78rem' }}>Real-time NLP conversation with zero acoustic lag.</span>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                <CheckCircle2 size={16} color="#00c896" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <div>
+                  <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block' }}>Local Storage &amp; Transcripts</strong>
+                  <span style={{ color: '#94a3b8', fontSize: '0.78rem' }}>Full .m4a audio and text saved directly to device storage.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Meta Bot Safety & 15-30 Min Onboarding Banner */}
+            <div style={{
+              marginTop: '20px',
+              padding: '14px 18px',
+              borderRadius: '12px',
+              background: 'rgba(0, 200, 150, 0.05)',
+              border: '1px solid rgba(0, 200, 150, 0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '12px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <ShieldCheck size={20} color="#00c896" />
+                <span style={{ fontSize: '0.82rem', color: '#cbd5e1' }}>
+                  <strong>100% Meta Graph API Compliant:</strong> WhatsApp &amp; Instagram DM bots strictly adhere to Meta policies. Zero scraping, zero account ban risk.
+                </span>
+              </div>
+              <span style={{
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                color: '#00c896',
+                background: 'rgba(0, 200, 150, 0.1)',
+                padding: '4px 10px',
+                borderRadius: '6px'
+              }}>
+                15–30 Min Turnaround Per Business
+              </span>
             </div>
           </div>
         )}

@@ -451,23 +451,24 @@ export const SERVICES_DATA = [
     startingPrice: '₹24,999',
     priceFrom: '$300',
     priceINR: '₹24,999',
-    timeline: '2 - 3 Weeks',
-    turnaround: '2 - 3 Weeks',
+    timeline: '15-30 Mins Setup',
+    turnaround: '15 - 30 Minutes',
     type: 'Setup + Usage',
-    metric: '<600ms Voice Latency • Concierge Included',
-    metrics: ['Support Concierge Included', '<600ms Latency', 'English & Hindi Accents'],
+    metric: '<800ms Auto-Answer • Bilingual Hindi/English',
+    metrics: ['15-30 Min Onboarding', '<800ms Cellular Pickup', 'Hardware DSP Noise Masking', 'Hindi & English'],
     deliverables: [
-      '60-second automatic callback to newly captured leads',
-      'Inbound front-desk telephone reception & call triage',
-      'Autonomous Support Concierge chatbot integrated as a core subset',
-      'Twilio, Deepgram Whisper STT & ElevenLabs natural voice pipeline',
-      'Automated call recording, transcription, and CRM sync'
+      'Android GSM InCall Gateway auto-answers cellular calls in <800ms',
+      'Hardware DSP noise suppression (VOICE_RECOGNITION) for clear speech',
+      'Bilingual Hindi & English real-time NLP speech processing turn loop',
+      'Local mobile storage: call audio (.m4a) and transcripts (.txt) saved to device',
+      'Render-hosted enterprise voice backend with API key licensing',
+      '100% Meta Graph API compliant WhatsApp & Instagram DM bots'
     ],
     features: [
-      'Human-like interruption detection and turn-taking',
-      'Direct calendar booking via Google/Outlook links',
-      'Live call transfer to human executives upon sentiment escalation',
-      'Detailed call analytics and lead qualification scoring'
+      'Sub-second interruption handling and fluid turn-taking',
+      'Direct calendar booking via WhatsApp or voice confirmation',
+      'Zero risk of Meta account restriction or shadowbans',
+      'Fast 15-30 minute zero-touch onboarding per business'
     ]
   },
   {
