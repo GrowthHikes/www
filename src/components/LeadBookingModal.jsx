@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, Send, CheckCircle2, AlertCircle, MessageSquare, Phone, ArrowRight, Sparkles } from 'lucide-react';
+import { X, Send, CheckCircle2, AlertCircle, MessageSquare, Phone, ArrowRight, Sparkles, Cpu, ShieldCheck, QrCode } from 'lucide-react';
 import { PUBLIC_API_URL } from '../config';
-import { CONTACT_PHONE_IN, SERVICES } from '../data/servicesData';
+import { CONTACT_PHONE_IN, SERVICES, TECH_OPTIONS, SCOPE_LOCK_AGREEMENT } from '../data/servicesData';
 
 export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) {
   const [formData, setFormData] = useState({
@@ -10,6 +10,7 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
     phone: '',
     company: '',
     serviceCategory: 'drone-shooting',
+    techStack: 'team',
     budget: '₹50,000 - ₹1.5 Lakhs ($600 - $1,800)',
     timeline: 'Standard (2-3 Weeks)',
     notes: '',
@@ -29,6 +30,7 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
         phone: '',
         company: '',
         serviceCategory: initialData?.selectedServices?.[0] || initialData?.serviceCategory || 'drone-shooting',
+        techStack: initialData?.techStack || 'team',
         budget: initialData?.totalUSD ? `$${initialData.totalUSD} / ₹${initialData.totalINR}` : (initialData?.budget || '₹50,000 - ₹1.5 Lakhs ($600 - $1,800)'),
         timeline: initialData?.urgency === 'rush' ? 'Priority Rush (<10 Days)' : (initialData?.timeline || 'Standard (2-3 Weeks)'),
         notes: initialData?.totalUSD
@@ -208,9 +210,30 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
               Inquiry Confirmed!
             </h3>
 
-            <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '28px' }}>
-              Thank you, <strong>{formData.name}</strong>. Your project scope has been dispatched to our engineering and flight directors. A representative will contact you via WhatsApp or phone within 4 business hours.
+            <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '20px' }}>
+              Thank you, <strong>{formData.name}</strong>. Your project scope has been locked and dispatched to our engineering and flight directors. A representative will contact you via WhatsApp or phone within 4 business hours.
             </p>
+
+            {/* Scope & Tech Summary Pill */}
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '12px',
+              padding: '12px 16px',
+              fontSize: '0.82rem',
+              color: '#cbd5e1',
+              textAlign: 'left',
+              marginBottom: '20px',
+            }}>
+              <div style={{ marginBottom: '4px' }}>
+                <span style={{ color: '#64748b' }}>Tech Architecture: </span>
+                <strong style={{ color: '#38bdf8' }}>{TECH_OPTIONS.find(t => t.id === formData.techStack)?.label || 'GrowthHikes Managed'}</strong>
+              </div>
+              <div>
+                <span style={{ color: '#64748b' }}>SOW Agreement: </span>
+                <span style={{ color: '#00c896', fontWeight: 600 }}>Pre-Kickoff Responsibilities Locked</span>
+              </div>
+            </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -420,6 +443,38 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
                 </select>
               </div>
 
+              {/* Technology Preference / Choice */}
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                  <label style={{ fontSize: '0.8rem', color: '#cbd5e1' }}>
+                    Technology Stack Preference
+                  </label>
+                  <span style={{ fontSize: '0.72rem', color: '#00c896', fontWeight: 600 }}>
+                    Customizable or Managed
+                  </span>
+                </div>
+                <select
+                  name="techStack"
+                  value={formData.techStack}
+                  onChange={handleChange}
+                  style={{
+                    width: '100%',
+                    padding: '12px 14px',
+                    borderRadius: '10px',
+                    background: '#1a1d2e',
+                    border: '1px solid rgba(0, 200, 150, 0.3)',
+                    color: '#fff',
+                    outline: 'none',
+                  }}
+                >
+                  {TECH_OPTIONS.map(opt => (
+                    <option key={opt.id} value={opt.id}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               {/* Budget & Timeline */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
                 <div>
@@ -489,6 +544,36 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
                 />
               </div>
 
+              {/* Scope & Responsibility Lock (SOW Agreement) */}
+              <div style={{
+                background: 'rgba(0, 200, 150, 0.04)',
+                border: '1px solid rgba(0, 200, 150, 0.2)',
+                borderRadius: '12px',
+                padding: '14px 16px',
+                fontSize: '0.8rem',
+                lineHeight: 1.5,
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <ShieldCheck size={16} color="#00c896" />
+                  <strong style={{ color: '#fff', fontSize: '0.84rem' }}>Locked Responsibility Protocol (Pre-Kickoff SOW)</strong>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', color: '#94a3b8' }}>
+                  <div>
+                    <span style={{ color: '#38bdf8', fontWeight: 600, display: 'block' }}>GrowthHikes Guarantees:</span>
+                    <span>• 100% full source code ownership handover</span><br />
+                    <span>• Automated CI/CD deployment & 30-day bug warranty</span>
+                  </div>
+                  <div>
+                    <span style={{ color: '#eab308', fontWeight: 600, display: 'block' }}>Client Prerequisites:</span>
+                    <span>• Provide API tokens (Meta, Twilio, OpenAI)</span><br />
+                    <span>• Review milestones within 48 business hours</span>
+                  </div>
+                </div>
+                <div style={{ marginTop: '8px', paddingTop: '6px', borderTop: '1px solid rgba(255, 255, 255, 0.06)', color: '#64748b', fontSize: '0.74rem' }}>
+                  * Runtime ad spend and vendor usage costs (Twilio/OpenAI/Render) are billed directly to client accounts.
+                </div>
+              </div>
+
               <button
                 type="submit"
                 disabled={loading}
@@ -498,11 +583,11 @@ export default function LeadBookingModal({ isOpen, onClose, initialData = {} }) 
                   borderRadius: '12px',
                   fontSize: '1rem',
                   fontWeight: 700,
-                  marginTop: '8px',
+                  marginTop: '4px',
                 }}
               >
                 <Send size={18} />
-                <span>{loading ? 'Submitting Proposal...' : 'Lock In Growth Consultation'}</span>
+                <span>{loading ? 'Submitting Proposal & Locking Scope...' : 'Lock In Project Scope & Consultation'}</span>
               </button>
             </form>
           </div>

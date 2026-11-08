@@ -509,12 +509,12 @@ export const SERVICES_DATA = [
     slug: 'brand-ui-ux-design',
     category: 'software',
     categoryLabel: 'Software & App Engineering',
-    name: 'Brand Identity & High-Converting UI/UX',
-    title: 'Brand Identity & High-Converting UI/UX',
+    name: 'Figma UI/UX & High-Converting Product Design',
+    title: 'Figma UI/UX & High-Converting Product Design',
     icon: 'Sparkles',
-    tagline: 'Design systems that command premium pricing and turn visitors into buyers.',
-    shortDesc: 'Comprehensive visual identity, typography pairing, logo systems, and conversion-optimized Figma UI kits for modern web and mobile apps.',
-    description: 'Comprehensive visual identity, typography pairing, logo systems, and conversion-optimized Figma UI kits for modern web and mobile apps.',
+    tagline: 'Developer-ready interactive Figma prototypes, component design tokens, and CRO landing page layouts.',
+    shortDesc: 'Stop guessing what to build. Clickable Figma prototypes, fluid auto-layouts, responsive design tokens, and high-converting landing pages ready for immediate developer handoff.',
+    description: 'Stop guessing what to build. We design production-ready, interactive Figma click-through prototypes with fluid auto-layouts, scalable design tokens (colors, typography, spacing), and conversion-optimized landing pages ready for immediate developer handoff via Figma Dev Mode.',
     priceStarts: '₹18,999',
     startingPrice: '₹18,999',
     priceFrom: '$450',
@@ -522,19 +522,20 @@ export const SERVICES_DATA = [
     timeline: '1 - 2 Weeks',
     turnaround: '1 - 2 Weeks',
     type: 'Design Sprint',
-    metric: 'Design Systems in Figma',
-    metrics: ['Figma Design System', 'Responsive Prototypes', 'Brand Style Guide'],
+    metric: 'Figma Dev Mode Ready',
+    metrics: ['Interactive Click-Through Prototype', 'Figma Dev Mode Ready', 'WCAG AAA Accessible'],
     deliverables: [
-      'Complete vector logo suite in SVG/PNG (dark, light, monochrome)',
-      'Design token library (typography, spacing, shadows, color palettes)',
-      'Interactive Figma prototypes with fluid auto-layouts',
-      'Comprehensive brand guideline PDF for team alignment'
+      'Interactive clickable Figma prototype (mobile and desktop auto-layouts)',
+      'Full design token system (color variables, typography scale, responsive components)',
+      'High-converting sales/lead generation landing page layout built with CRO principles',
+      'Figma Dev Mode handoff with exact CSS/Tailwind specifications ready for development',
+      'Exported SVG icon suites, WebP visual assets, and social media presentation card templates'
     ],
     features: [
-      'WCAG AAA accessible contrast standards',
-      'Ready for immediate developer handoff via Figma Dev Mode',
-      'Social media profile avatars, banners, and template cards',
-      'Unlimited revisions during the active design sprint'
+      'WCAG AAA accessible contrast standards throughout all screens',
+      'Complete component state definitions (hover, active, focus, disabled, loading)',
+      'Developer handoff call with code export walkthrough',
+      'Unlimited revisions during the active 2-week design sprint'
     ]
   },
   {
@@ -542,35 +543,67 @@ export const SERVICES_DATA = [
     slug: 'analytics-attribution-pipelines',
     category: 'growth',
     categoryLabel: 'Growth & Paid Media',
-    name: 'Attribution & Performance Data Pipelines',
-    title: 'Attribution & Performance Data Pipelines',
+    name: 'Server-Side Meta CAPI & Conversion Tracking (Fix iOS 14 Drop-Offs)',
+    title: 'Server-Side Meta CAPI & Conversion Tracking (Fix iOS 14 Drop-Offs)',
     icon: 'Target',
-    tagline: 'Track every dollar spent back to the exact creative and customer session.',
-    shortDesc: 'Server-side tracking infrastructure using Google Tag Manager (sGTM), Meta CAPI, Google BigQuery, and custom Looker Studio dashboards.',
-    description: 'Server-side tracking infrastructure using Google Tag Manager (sGTM), Meta CAPI, Google BigQuery, and custom Looker Studio dashboards.',
+    tagline: 'Recover lost ad conversions and fix iOS 14 tracking blind spots with server-side GTM and Meta CAPI.',
+    shortDesc: 'Bypass browser ad blockers and iOS tracking loss using first-party server-side tagging (sGTM) on Cloudflare Workers, Meta Conversions API (CAPI), and live ROAS dashboards.',
+    description: 'Bypass browser ad blockers and iOS tracking loss using first-party server-side tagging (sGTM) on Cloudflare Workers, Meta Conversions API (CAPI), and live ROAS dashboards.',
     priceStarts: '₹16,999',
     startingPrice: '₹16,999',
     priceFrom: '$450',
     priceINR: '₹16,999',
-    timeline: '1 - 2 Weeks',
-    turnaround: '1 - 2 Weeks',
+    timeline: '3 - 5 Days',
+    turnaround: '3 - 5 Days',
     type: 'Infrastructure Setup',
-    metric: '100% Data Accuracy',
-    metrics: ['Zero Lost Conversions', 'Looker Studio Sync', 'sGTM Cloud Run'],
+    metric: '100% Tracking Resilience',
+    metrics: ['8.5+ Event Match Score', 'Zero Lost Conversions', 'Looker Studio Sync'],
     deliverables: [
-      'Server-side GTM setup on Cloudflare Workers or Google Cloud Run',
-      'Meta Conversions API (CAPI) deduplication with event match quality > 8.5',
-      'Automated Looker Studio executive reporting dashboard',
-      'UTM tracking standardization across all outbound marketing channels'
+      'Server-side GTM (sGTM) deployed on Cloudflare Workers or Google Cloud Run',
+      'Meta Conversions API (CAPI) deduplication with Event Match Quality > 8.5',
+      'First-party cookie server gateway bypassing Safari/iOS 14.5+ tracking blockers',
+      'Live Looker Studio executive dashboard tracking exact blended ROAS and CPA',
+      'Direct webhook sync sending offline purchase & lead events to Meta & Google Ads'
     ],
     features: [
-      'Cookie-less first-party tracking resilience against iOS updates',
-      'Direct purchase event webhook to your internal database',
-      'Automated slack notification on abnormal ROAS drops',
-      'Full documentation and handover training'
+      'Cookie-less first-party tracking resilience against iOS browser restrictions',
+      'Automated Telegram/Slack notification on abnormal ROAS or conversion drops',
+      'UTM parameter standardization across all outbound marketing channels',
+      'Full documentation and handover training with lead engineers'
     ]
   }
 ];
+
+export const TECH_OPTIONS = [
+  { id: 'team', label: 'Leave it to GrowthHikes Team (Recommended - Best Stack for Performance & Budget)' },
+  { id: 'nextjs', label: 'Next.js 14 & React (Full-Stack TypeScript & Server Components)' },
+  { id: 'reactnative', label: 'React Native Expo (Universal iOS & Android App)' },
+  { id: 'flutter', label: 'Flutter & Dart (60 FPS Native Performance)' },
+  { id: 'nodejs', label: 'Node.js & Express / Fastify Microservices' },
+  { id: 'python', label: 'Python & FastAPI (AI, LangChain, RAG Vector Search)' },
+  { id: 'cloudflare', label: 'Cloudflare Workers & D1 (Zero Cold-Start Edge Serverless)' },
+  { id: 'wordpress', label: 'WordPress / Headless WooCommerce' },
+  { id: 'custom', label: 'Custom Specification / Other' }
+];
+
+export const SCOPE_LOCK_AGREEMENT = {
+  agency_responsibility: [
+    '100% full source code ownership handover via GitHub / GitLab upon milestone completion',
+    'Automated CI/CD build & deployment pipelines (Render, Cloudflare, or AWS)',
+    '30-day post-launch bug warranty with priority SLA support',
+    'Transparent asynchronous progress tracking and daily sprint updates'
+  ],
+  client_responsibility: [
+    'Providing domain DNS access, Meta Developer access, and required API keys (OpenAI, Twilio, Render)',
+    'Providing brand assets (logos, high-res photos, product catalogs) before sprint kickoff',
+    'Reviewing and signing off on milestone deliverables within 48 business hours'
+  ],
+  out_of_scope: [
+    'Third-party runtime usage consumption (Twilio telephony bills, OpenAI tokens, Render compute)',
+    'Direct paid advertising budget (ad spend paid directly to Meta / Google)',
+    'Scope additions or feature changes outside the initial signed specification'
+  ]
+};
 
 // Aliases for compatibility
 export const SERVICES = SERVICES_DATA;
