@@ -280,7 +280,6 @@ export default function Footer({ onOpenBooking }) {
               <li><Link to="/services/paid-advertising-capi" style={{ color: '#94a3b8', textDecoration: 'none' }}>Paid Advertising (Meta/Google)</Link></li>
               <li><Link to="/services/ugc-creator-engine" style={{ color: '#94a3b8', textDecoration: 'none' }}>UGC Creator Engine</Link></li>
               <li><Link to="/services/email-sms-funnels" style={{ color: '#94a3b8', textDecoration: 'none' }}>Automated Email Funnels</Link></li>
-              <li><Link to="/services/ecommerce-mentorship" style={{ color: '#94a3b8', textDecoration: 'none' }}>Ecommerce Mentorship</Link></li>
             </ul>
           </div>
 

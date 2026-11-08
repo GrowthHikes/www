@@ -32,8 +32,6 @@ export default function QuotationCalculator({ onBookWithQuote }) {
     'chatbots': { usd: 300, inr: 24999 },
     'technical-consultancy': { usd: 5, inr: 499 },
     'custom-software': { usd: 800, inr: 32999 },
-    'ecommerce-coaching': { usd: 450, inr: 18999 },
-    'ecommerce-mentorship': { usd: 450, inr: 25000 },
     'brand-ui-ux-design': { usd: 450, inr: 18999 },
     'analytics-attribution': { usd: 450, inr: 16999 },
   };

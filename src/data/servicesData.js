@@ -505,39 +505,6 @@ export const SERVICES_DATA = [
     ]
   },
   {
-    id: 'ecommerce-mentorship',
-    slug: 'ecommerce-mentorship',
-    category: 'growth',
-    categoryLabel: 'Growth & Paid Media',
-    name: '1-on-1 Ecommerce & Growth Mentorship',
-    title: '1-on-1 Ecommerce & Growth Mentorship',
-    icon: 'Zap',
-    tagline: 'Direct playbook transfer to scale your D2C brand from 5-figures to 7-figures.',
-    shortDesc: 'Hands-on executive coaching covering supply chain, pricing psychology, creative strategy, media buying, and unit economics.',
-    description: 'Hands-on executive coaching covering supply chain, pricing psychology, creative strategy, media buying, and unit economics.',
-    priceStarts: '₹25,000/mo',
-    startingPrice: '₹25,000/mo',
-    priceFrom: '$750/mo',
-    priceINR: '₹25,000/mo',
-    timeline: 'Quarterly Cohort',
-    turnaround: 'Quarterly Cohort',
-    type: 'Mentorship Retainer',
-    metric: '1-on-1 Founder Access',
-    metrics: ['Weekly 1-on-1 Calls', 'Direct WhatsApp Access', 'Full SOP Library'],
-    deliverables: [
-      'Weekly 60-minute strategic review calls with growth directors',
-      'Full financial modeling and contribution margin calculators',
-      'Creative audit of existing ads, landing pages, and email flows',
-      'Supplier negotiation scripts and logistics optimization guide'
-    ],
-    features: [
-      'Private Slack/WhatsApp hotline for emergency ad reviews',
-      'Access to GrowthHikes internal creator contracts and templates',
-      'Benchmarking against top 1% industry conversion rates',
-      'Quarterly in-person or virtual planning summits'
-    ]
-  },
-  {
     id: 'brand-ui-ux-design',
     slug: 'brand-ui-ux-design',
     category: 'software',
